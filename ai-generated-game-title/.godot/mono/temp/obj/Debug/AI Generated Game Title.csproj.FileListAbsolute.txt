@@ -1,0 +1,18 @@
+E:\GitHub SHit\AI-Generated-Game-Title\ai-generated-game-title\.godot\mono\temp\bin\Debug\AI Generated Game Title.deps.json
+E:\GitHub SHit\AI-Generated-Game-Title\ai-generated-game-title\.godot\mono\temp\bin\Debug\AI Generated Game Title.runtimeconfig.json
+E:\GitHub SHit\AI-Generated-Game-Title\ai-generated-game-title\.godot\mono\temp\bin\Debug\AI Generated Game Title.dll
+E:\GitHub SHit\AI-Generated-Game-Title\ai-generated-game-title\.godot\mono\temp\bin\Debug\AI Generated Game Title.pdb
+E:\GitHub SHit\AI-Generated-Game-Title\ai-generated-game-title\.godot\mono\temp\bin\Debug\GodotSharp.dll
+E:\GitHub SHit\AI-Generated-Game-Title\ai-generated-game-title\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+E:\GitHub SHit\AI-Generated-Game-Title\ai-generated-game-title\.godot\mono\temp\obj\Debug\AI Generated Game Title.csproj.AssemblyReference.cache
+E:\GitHub SHit\AI-Generated-Game-Title\ai-generated-game-title\.godot\mono\temp\obj\Debug\AI Generated Game Title.GeneratedMSBuildEditorConfig.editorconfig
+E:\GitHub SHit\AI-Generated-Game-Title\ai-generated-game-title\.godot\mono\temp\obj\Debug\AI Generated Game Title.AssemblyInfoInputs.cache
+E:\GitHub SHit\AI-Generated-Game-Title\ai-generated-game-title\.godot\mono\temp\obj\Debug\AI Generated Game Title.AssemblyInfo.cs
+E:\GitHub SHit\AI-Generated-Game-Title\ai-generated-game-title\.godot\mono\temp\obj\Debug\AI Generated Game Title.csproj.CoreCompileInputs.cache
+E:\GitHub SHit\AI-Generated-Game-Title\ai-generated-game-title\.godot\mono\temp\obj\Debug\AI Generated Game Title.sourcelink.json
+E:\GitHub SHit\AI-Generated-Game-Title\ai-generated-game-title\.godot\mono\temp\obj\Debug\AI Gener.C44D09A0.Up2Date
+E:\GitHub SHit\AI-Generated-Game-Title\ai-generated-game-title\.godot\mono\temp\obj\Debug\AI Generated Game Title.dll
+E:\GitHub SHit\AI-Generated-Game-Title\ai-generated-game-title\.godot\mono\temp\obj\Debug\refint\AI Generated Game Title.dll
+E:\GitHub SHit\AI-Generated-Game-Title\ai-generated-game-title\.godot\mono\temp\obj\Debug\AI Generated Game Title.pdb
+E:\GitHub SHit\AI-Generated-Game-Title\ai-generated-game-title\.godot\mono\temp\obj\Debug\AI Generated Game Title.genruntimeconfig.cache
+E:\GitHub SHit\AI-Generated-Game-Title\ai-generated-game-title\.godot\mono\temp\obj\Debug\ref\AI Generated Game Title.dll

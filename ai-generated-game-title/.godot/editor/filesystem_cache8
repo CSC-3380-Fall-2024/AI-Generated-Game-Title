@@ -1,0 +1,10 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1729985016
+icon.svg::CompressedTexture2D::9206946739741737169::1729193670::1729985017::1::::<><>::
+::res://Scenes/::1729984993
+CharacterBody2d.cs::CSharpScript::-1::1729984977::0::1::::<>CharacterBody2D<>::
+Game.cs::CSharpScript::-1::1729193670::0::1::::<>Node2D<>::
+game.tscn::PackedScene::4566022503007513523::1729984993::0::1::::<><>::uid://bjjj2gq3rtpoe::::res://Textures/Grass 1.png<>res://Scenes/CharacterBody2d.cs<>uid://d4f6ckg8r52yv::::res://icon.svg
+player.tscn::PackedScene::5715348243089664813::1729193670::0::1::::<><>::uid://d4f6ckg8r52yv::::res://icon.svg<>res://Scripts/Sprite2d.cs
+::res://Textures/::1729984999
+Grass 1.png::CompressedTexture2D::3037294686744906564::1729193670::1729985017::1::::<><>::

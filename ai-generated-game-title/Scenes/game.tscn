@@ -21,7 +21,6 @@ stretch_mode = 1
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(618, 340)
 script = ExtResource("2_v538n")
-speed = 3
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
