@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6b2yunihqir8"]
+
+[ext_resource type="Texture2D" uid="uid://bjjj2gq3rtpoe" path="res://Textures/Grass 1.png" id="1_14gx0"]
+[ext_resource type="Script" path="res://Scenes/CharacterBody2d.cs" id="2_v538n"]
+[ext_resource type="Texture2D" uid="uid://d4f6ckg8r52yv" path="res://icon.svg" id="3_14hrf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3osvs"]
+size = Vector2(126, 122)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3x27"]
+size = Vector2(69, 477)
+
+[node name="Game" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_14gx0")
+stretch_mode = 1
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(618, 340)
+script = ExtResource("2_v538n")
+speed = 3
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_3osvs")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("3_14hrf")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(272, 353)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(24, 5.5)
+scale = Vector2(0.546875, 3.72656)
+texture = ExtResource("3_14hrf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(24.5, 6.5)
+shape = SubResource("RectangleShape2D_b3x27")
