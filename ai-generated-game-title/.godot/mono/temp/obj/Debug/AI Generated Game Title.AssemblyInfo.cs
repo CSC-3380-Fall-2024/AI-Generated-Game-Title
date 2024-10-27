@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AI Generated Game Title")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0db959418bbe5d97299ae7e02781127514a6c0a4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fed1d11f793dcff7675875c5322e3de45bcb2e33")]
 [assembly: System.Reflection.AssemblyProductAttribute("AI Generated Game Title")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AI Generated Game Title")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
