@@ -30,14 +30,6 @@ shape = SubResource("RectangleShape2D_3osvs")
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 texture = ExtResource("3_14hrf")
 
-[node name="DashTimer" type="Timer" parent="CharacterBody2D"]
-wait_time = 0.3
-autostart = true
-
-[node name="DashCooldown" type="Timer" parent="CharacterBody2D"]
-wait_time = 0.8
-autostart = true
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(272, 353)
 metadata/_edit_group_ = true
@@ -50,6 +42,3 @@ texture = ExtResource("3_14hrf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(24.5, 6.5)
 shape = SubResource("RectangleShape2D_b3x27")
-
-[connection signal="timeout" from="CharacterBody2D/DashTimer" to="CharacterBody2D" method="_on_dash_timer_timeout"]
-[connection signal="timeout" from="CharacterBody2D/DashCooldown" to="CharacterBody2D" method="_on_dash_cooldown_timeout"]
