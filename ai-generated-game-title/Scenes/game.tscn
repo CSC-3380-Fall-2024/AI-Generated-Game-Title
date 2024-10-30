@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6b2yunihqir8"]
+[gd_scene load_steps=8 format=3 uid="uid://b6b2yunihqir8"]
 
 [ext_resource type="Texture2D" uid="uid://bjjj2gq3rtpoe" path="res://Textures/Grass 1.png" id="1_14gx0"]
-[ext_resource type="Script" path="res://Scenes/CharacterBody2d.cs" id="2_v538n"]
+[ext_resource type="Script" path="res://Scenes/Player.cs" id="2_v538n"]
 [ext_resource type="Texture2D" uid="uid://d4f6ckg8r52yv" path="res://icon.svg" id="3_14hrf"]
+[ext_resource type="Script" path="res://Scenes/Enemy.cs" id="4_frdmh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3osvs"]
 size = Vector2(126, 122)
@@ -10,46 +11,63 @@ size = Vector2(126, 122)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b3x27"]
 size = Vector2(69, 477)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xw54n"]
+size = Vector2(120, 122)
+
 [node name="Game" type="Node2D"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("1_14gx0")
 stretch_mode = 1
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(618, 340)
 script = ExtResource("2_v538n")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_3osvs")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture = ExtResource("3_14hrf")
 
-[node name="DashTimer" type="Timer" parent="CharacterBody2D"]
+[node name="DashTimer" type="Timer" parent="Player"]
 wait_time = 0.3
 autostart = true
 
-[node name="DashCooldown" type="Timer" parent="CharacterBody2D"]
+[node name="DashCooldown" type="Timer" parent="Player"]
 wait_time = 0.8
 autostart = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="randowall" type="StaticBody2D" parent="."]
 position = Vector2(272, 353)
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="randowall"]
 position = Vector2(24, 5.5)
 scale = Vector2(0.546875, 3.72656)
 texture = ExtResource("3_14hrf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="randowall"]
 position = Vector2(24.5, 6.5)
 shape = SubResource("RectangleShape2D_b3x27")
 
-[connection signal="timeout" from="CharacterBody2D/DashTimer" to="CharacterBody2D" method="_on_dash_timer_timeout"]
-[connection signal="timeout" from="CharacterBody2D/DashCooldown" to="CharacterBody2D" method="_on_dash_cooldown_timeout"]
+[node name="Enemy" type="Node2D" parent="."]
+position = Vector2(472, 151)
+metadata/_edit_group_ = true
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Enemy"]
+script = ExtResource("4_frdmh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/CharacterBody2D"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_xw54n")
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy/CharacterBody2D"]
+texture = ExtResource("3_14hrf")
+
+[connection signal="timeout" from="Player/DashTimer" to="Player" method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="Player/DashCooldown" to="Player" method="_on_dash_cooldown_timeout"]

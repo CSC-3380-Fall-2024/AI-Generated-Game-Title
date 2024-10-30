@@ -1,3 +1,7 @@
 res://Scenes/game.tscn
-res://Scenes/CharacterBody2d.cs
+res://PlayerScript.cs
+res://Unit.cs
 res://Scenes/Game.cs
+res://Scenes/Player.cs
+res://Scenes/Enemy.cs
+res://Scenes/CharacterBody2d.cs

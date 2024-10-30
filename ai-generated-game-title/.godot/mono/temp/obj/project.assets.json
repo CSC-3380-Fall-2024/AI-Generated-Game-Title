@@ -93,11 +93,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\GitHub SHit\\AI-Generated-Game-Title\\ai-generated-game-title\\AI Generated Game Title.csproj",
+      "projectUniqueName": "C:\\Users\\owenc\\OneDrive\\Documents\\ai-generated-game-title\\AI-Generated-Game-Title\\ai-generated-game-title\\AI Generated Game Title.csproj",
       "projectName": "AI Generated Game Title",
-      "projectPath": "E:\\GitHub SHit\\AI-Generated-Game-Title\\ai-generated-game-title\\AI Generated Game Title.csproj",
+      "projectPath": "C:\\Users\\owenc\\OneDrive\\Documents\\ai-generated-game-title\\AI-Generated-Game-Title\\ai-generated-game-title\\AI Generated Game Title.csproj",
       "packagesPath": "C:\\Users\\owenc\\.nuget\\packages\\",
-      "outputPath": "E:\\GitHub SHit\\AI-Generated-Game-Title\\ai-generated-game-title\\.godot\\mono\\temp\\obj\\",
+      "outputPath": "C:\\Users\\owenc\\OneDrive\\Documents\\ai-generated-game-title\\AI-Generated-Game-Title\\ai-generated-game-title\\.godot\\mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\owenc\\AppData\\Roaming\\NuGet\\NuGet.Config"

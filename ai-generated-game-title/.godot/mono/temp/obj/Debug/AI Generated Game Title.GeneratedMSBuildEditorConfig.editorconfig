@@ -1,6 +1,6 @@
 is_global = true
 build_property.GodotDisabledSourceGenerators = 
-build_property.GodotProjectDir = E:\GitHub SHit\AI-Generated-Game-Title\ai-generated-game-title\
+build_property.GodotProjectDir = C:\Users\owenc\OneDrive\Documents\ai-generated-game-title\AI-Generated-Game-Title\ai-generated-game-title\
 build_property.GodotProjectDirBase64 = 
 build_property.GodotSourceGenerators = 
 build_property.IsGodotToolsProject = 
@@ -13,6 +13,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AIGeneratedGameTitle
-build_property.ProjectDir = E:\GitHub SHit\AI-Generated-Game-Title\ai-generated-game-title\
+build_property.ProjectDir = C:\Users\owenc\OneDrive\Documents\ai-generated-game-title\AI-Generated-Game-Title\ai-generated-game-title\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
