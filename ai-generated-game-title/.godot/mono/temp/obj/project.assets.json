@@ -88,24 +88,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\owenc\\.nuget\\packages\\": {}
+    "C:\\Users\\Micha\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\owenc\\OneDrive\\Documents\\ai-generated-game-title\\AI-Generated-Game-Title\\ai-generated-game-title\\AI Generated Game Title.csproj",
+      "projectUniqueName": "C:\\Users\\Micha\\OneDrive\\Documents\\GitHub\\AI-Generated-Game-Title\\ai-generated-game-title\\AI Generated Game Title.csproj",
       "projectName": "AI Generated Game Title",
-      "projectPath": "C:\\Users\\owenc\\OneDrive\\Documents\\ai-generated-game-title\\AI-Generated-Game-Title\\ai-generated-game-title\\AI Generated Game Title.csproj",
-      "packagesPath": "C:\\Users\\owenc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\owenc\\OneDrive\\Documents\\ai-generated-game-title\\AI-Generated-Game-Title\\ai-generated-game-title\\.godot\\mono\\temp\\obj\\",
+      "projectPath": "C:\\Users\\Micha\\OneDrive\\Documents\\GitHub\\AI-Generated-Game-Title\\ai-generated-game-title\\AI Generated Game Title.csproj",
+      "packagesPath": "C:\\Users\\Micha\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Micha\\OneDrive\\Documents\\GitHub\\AI-Generated-Game-Title\\ai-generated-game-title\\.godot\\mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\owenc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Micha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -153,20 +155,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.33, 6.0.33]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.33, 6.0.33]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.33, 6.0.33]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

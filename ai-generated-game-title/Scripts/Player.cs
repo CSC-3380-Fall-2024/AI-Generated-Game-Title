@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class CharacterBody2d : CharacterBody2D
+public partial class Player : CharacterBody2D
 {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -16,6 +16,7 @@ public partial class CharacterBody2d : CharacterBody2D
 
 	public void GetInput()
 	{
+		LookAt(GetGlobalMousePosition());
 		Vector2 inputDir = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 		
 		if(Input.IsActionJustPressed("dash") && canDash){

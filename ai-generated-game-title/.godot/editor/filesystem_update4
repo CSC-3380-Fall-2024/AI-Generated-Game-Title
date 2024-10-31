@@ -1,7 +1,10 @@
 res://Scenes/game.tscn
-res://PlayerScript.cs
-res://Unit.cs
-res://Scenes/Game.cs
-res://Scenes/Player.cs
-res://Scenes/Enemy.cs
-res://Scenes/CharacterBody2d.cs
+res://Scenes/player.tscn
+res://Scenes/bullet.tscn
+res://Scenes/enemy.tscn
+res://Scripts/Bullet.cs
+res://Scripts/Unit.cs
+res://Scripts/Game.cs
+res://Scripts/Gun.cs
+res://Scripts/Enemy.cs
+res://Scripts/Player.cs
