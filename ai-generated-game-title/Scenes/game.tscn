@@ -1,18 +1,16 @@
 [gd_scene load_steps=8 format=3 uid="uid://b6b2yunihqir8"]
 
 [ext_resource type="Texture2D" uid="uid://bjjj2gq3rtpoe" path="res://Textures/Grass 1.png" id="1_14gx0"]
-[ext_resource type="Script" path="res://Scenes/Player.cs" id="2_v538n"]
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="2_v538n"]
 [ext_resource type="Texture2D" uid="uid://d4f6ckg8r52yv" path="res://icon.svg" id="3_14hrf"]
-[ext_resource type="Script" path="res://Scenes/Enemy.cs" id="4_frdmh"]
+[ext_resource type="Script" path="res://Scripts/EnemySpawner.cs" id="4_stxec"]
+[ext_resource type="PackedScene" uid="uid://b8ql53fl2xx64" path="res://Scenes/Enemy.tscn" id="5_4d646"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3osvs"]
 size = Vector2(126, 122)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b3x27"]
 size = Vector2(69, 477)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xw54n"]
-size = Vector2(120, 122)
 
 [node name="Game" type="Node2D"]
 
@@ -55,19 +53,21 @@ texture = ExtResource("3_14hrf")
 position = Vector2(24.5, 6.5)
 shape = SubResource("RectangleShape2D_b3x27")
 
-[node name="Enemy" type="Node2D" parent="."]
-position = Vector2(472, 151)
-metadata/_edit_group_ = true
+[node name="EnemySpawner" type="Node2D" parent="." node_paths=PackedStringArray("spawn_points")]
+script = ExtResource("4_stxec")
+enemy_scn = ExtResource("5_4d646")
+spawn_points = [NodePath("SpawnPoint"), NodePath("SpawntPoint2"), NodePath("SpawntPoint3"), NodePath("SpawntPoint4")]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="Enemy"]
-script = ExtResource("4_frdmh")
+[node name="SpawnPoint" type="Node2D" parent="EnemySpawner"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/CharacterBody2D"]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_xw54n")
+[node name="SpawntPoint2" type="Node2D" parent="EnemySpawner"]
+position = Vector2(1288, -1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Enemy/CharacterBody2D"]
-texture = ExtResource("3_14hrf")
+[node name="SpawntPoint3" type="Node2D" parent="EnemySpawner"]
+position = Vector2(1274, 713)
+
+[node name="SpawntPoint4" type="Node2D" parent="EnemySpawner"]
+position = Vector2(-6, 717)
 
 [connection signal="timeout" from="Player/DashTimer" to="Player" method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="Player/DashCooldown" to="Player" method="_on_dash_cooldown_timeout"]
