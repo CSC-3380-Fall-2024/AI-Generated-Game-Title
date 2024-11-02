@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6b2yunihqir8"]
+[gd_scene load_steps=9 format=3 uid="uid://b6b2yunihqir8"]
 
 [ext_resource type="Texture2D" uid="uid://bjjj2gq3rtpoe" path="res://Textures/Grass 1.png" id="1_14gx0"]
 [ext_resource type="Script" path="res://Scripts/Player.cs" id="2_v538n"]
@@ -8,6 +8,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3osvs"]
 size = Vector2(126, 122)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptul4"]
+bg_color = Color(0.160784, 1, 0.494118, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b3x27"]
 size = Vector2(69, 477)
@@ -21,8 +24,10 @@ texture = ExtResource("1_14gx0")
 stretch_mode = 1
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(618, 340)
+position = Vector2(652, 345)
+collision_layer = 2
 script = ExtResource("2_v538n")
+health = 2
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
@@ -34,11 +39,21 @@ texture = ExtResource("3_14hrf")
 
 [node name="DashTimer" type="Timer" parent="Player"]
 wait_time = 0.3
-autostart = true
 
 [node name="DashCooldown" type="Timer" parent="Player"]
 wait_time = 0.8
-autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
+
+[node name="HealthBar" type="ProgressBar" parent="Player/CanvasLayer"]
+offset_left = 994.0
+offset_top = 661.0
+offset_right = 1249.0
+offset_bottom = 688.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_ptul4")
+step = 1.0
+value = 5.0
+show_percentage = false
 
 [node name="randowall" type="StaticBody2D" parent="."]
 position = Vector2(272, 353)

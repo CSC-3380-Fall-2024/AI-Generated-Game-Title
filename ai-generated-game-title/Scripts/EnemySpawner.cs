@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class EnemySpawner : Node2D {
+public partial class EnemySpawner: Node2D {
 	
 	[Export] PackedScene enemy_scn;
 	[Export] Node2D[] spawn_points;
