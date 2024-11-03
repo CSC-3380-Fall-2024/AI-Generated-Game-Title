@@ -1,0 +1,19 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1730397809
+enemy.tscn::PackedScene::2794093210774239176::1730397853::0::1::::<><>::res://Scripts/Enemy.cs<>uid://d4f6ckg8r52yv::::res://Textures/icon.svg
+::res://Scenes/::1730397535
+bullet.tscn::PackedScene::2315991386789963791::1730397535::0::1::::<><>::res://Scripts/Bullet.cs<>uid://c2l0o07tm3242::::res://Sprites/Bullet.png
+game.tscn::PackedScene::4566022503007513523::1730397238::0::1::::<><>::uid://bjjj2gq3rtpoe::::res://Textures/Grass 1.png<>uid://d4f6ckg8r52yv::::res://Textures/icon.svg<>uid://d2ufhsalg5xa2::::res://Scenes/player.tscn<>res://Scripts/Enemy.cs
+player.tscn::PackedScene::9095965415837855655::1730397238::0::1::::<><>::uid://d4f6ckg8r52yv::::res://Textures/icon.svg<>res://Scripts/Player.cs<>res://Scripts/Gun.cs<>uid://785bl8d5gxad::::res://Scenes/bullet.tscn
+::res://Scripts/::1730397535
+Bullet.cs::CSharpScript::-1::1730396860::0::1::::<><>::
+Enemy.cs::CSharpScript::-1::1730397175::0::1::::<>CharacterBody2D<>::
+Game.cs::CSharpScript::-1::1730390454::0::1::::<>Node2D<>::
+Gun.cs::CSharpScript::-1::1730396093::0::1::::<>Node2D<>::
+Player.cs::CSharpScript::-1::1730397180::0::1::::<>CharacterBody2D<>::
+Unit.cs::CSharpScript::-1::1730390459::0::1::::<>Node<>::
+::res://Sprites/::1730394312
+Bullet.png::CompressedTexture2D::6692192590239500897::1730394304::1730394312::1::::<><>::
+::res://Textures/::1730394200
+Grass 1.png::CompressedTexture2D::3037294686744906564::1730390454::1730390574::1::::<><>::
+icon.svg::CompressedTexture2D::9206946739741737169::1730390454::1730391825::1::::<><>::

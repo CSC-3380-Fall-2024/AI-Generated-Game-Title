@@ -1,14 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6b2yunihqir8"]
+[gd_scene load_steps=6 format=3 uid="uid://b6b2yunihqir8"]
 
 [ext_resource type="Texture2D" uid="uid://bjjj2gq3rtpoe" path="res://Textures/Grass 1.png" id="1_14gx0"]
-[ext_resource type="PackedScene" uid="uid://cnos7k3b76i1b" path="res://Scenes/player.tscn" id="2_ykdcb"]
+[ext_resource type="Texture2D" uid="uid://d4f6ckg8r52yv" path="res://Textures/icon.svg" id="3_14hrf"]
+[ext_resource type="PackedScene" uid="uid://d2ufhsalg5xa2" path="res://Scenes/player.tscn" id="4_c5hm8"]
+[ext_resource type="PackedScene" uid="uid://bf2qko3y2cmn5" path="res://Scenes/enemy.tscn" id="4_qw3c4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3x27"]
+size = Vector2(69, 477)
 
 [node name="Game" type="Node2D"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
+offset_left = -734.0
+offset_top = -461.0
 offset_right = 1280.0
 offset_bottom = 720.0
 texture = ExtResource("1_14gx0")
 stretch_mode = 1
 
-[node name="Player" parent="." instance=ExtResource("2_ykdcb")]
+[node name="randowall" type="StaticBody2D" parent="."]
+position = Vector2(272, 353)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="randowall"]
+position = Vector2(24, 5.5)
+scale = Vector2(0.546875, 3.72656)
+texture = ExtResource("3_14hrf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="randowall"]
+position = Vector2(24.5, 6.5)
+shape = SubResource("RectangleShape2D_b3x27")
+
+[node name="Player" parent="." instance=ExtResource("4_c5hm8")]
+position = Vector2(7, 1)
+
+[node name="Enemy" parent="." instance=ExtResource("4_qw3c4")]
