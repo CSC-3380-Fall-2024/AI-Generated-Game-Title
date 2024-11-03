@@ -1,9 +1,0 @@
-res://Scenes/Enemy.tscn
-res://Scenes/game.tscn
-res://Scripts/CharacterBody2d.cs
-res://Scripts/Game.cs
-res://Scripts/Player.cs
-res://Scripts/Enemy.cs
-res://Unit.cs
-res://PlayerScript.cs
-res://Scripts/EnemySpawner.cs
