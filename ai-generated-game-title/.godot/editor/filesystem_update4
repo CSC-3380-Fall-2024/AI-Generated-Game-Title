@@ -1,7 +1,0 @@
-res://Scenes/game.tscn
-res://Scripts/Player.cs
-res://Scripts/PlayerHealthBar.cs
-res://Scripts/Enemy.cs
-res://Scripts/EnemySpawner.cs
-res://Scripts/Game.cs
-res://Scenes/Enemy.tscn
