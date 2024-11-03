@@ -45,4 +45,16 @@ public partial class CharacterBody2d : CharacterBody2D
 		GetInput();
 		MoveAndSlide();
 	}
+	
+	private void Die() {
+		QueueFree();
+	}
+	
+	//should be called when body enters collision area
+	private void IsShot(Node body) {
+		if (body is Bullet) {
+			Damage(Bullets_damage);
+			body.QueueFree(); //destroys bullet after collision
+		}
+	}
 }
