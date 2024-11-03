@@ -1,15 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "M2DZ362nieg=",
+  "dgSpecHash": "9HKxU9SlUGw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Boo\\Documents\\GitHub\\AI-Generated-Game-Title\\ai-generated-game-title\\AI Generated Game Title.csproj",
+  "projectFilePath": "/Users/vannisasouriyavong/projects/AI-Generated-Game-Title/ai-generated-game-title/AI Generated Game Title.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Boo\\.nuget\\packages\\godot.sourcegenerators\\4.3.0\\godot.sourcegenerators.4.3.0.nupkg.sha512",
-    "C:\\Users\\Boo\\.nuget\\packages\\godotsharp\\4.3.0\\godotsharp.4.3.0.nupkg.sha512",
-    "C:\\Users\\Boo\\.nuget\\packages\\godotsharpeditor\\4.3.0\\godotsharpeditor.4.3.0.nupkg.sha512",
-    "C:\\Users\\Boo\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.35\\microsoft.netcore.app.ref.6.0.35.nupkg.sha512",
-    "C:\\Users\\Boo\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.35\\microsoft.windowsdesktop.app.ref.6.0.35.nupkg.sha512",
-    "C:\\Users\\Boo\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.35\\microsoft.aspnetcore.app.ref.6.0.35.nupkg.sha512"
+    "/Users/vannisasouriyavong/.nuget/packages/godot.sourcegenerators/4.3.0/godot.sourcegenerators.4.3.0.nupkg.sha512",
+    "/Users/vannisasouriyavong/.nuget/packages/godotsharp/4.3.0/godotsharp.4.3.0.nupkg.sha512",
+    "/Users/vannisasouriyavong/.nuget/packages/godotsharpeditor/4.3.0/godotsharpeditor.4.3.0.nupkg.sha512",
+    "/Users/vannisasouriyavong/.nuget/packages/microsoft.netcore.app.ref/6.0.33/microsoft.netcore.app.ref.6.0.33.nupkg.sha512",
+    "/Users/vannisasouriyavong/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.33/microsoft.aspnetcore.app.ref.6.0.33.nupkg.sha512"
   ],
   "logs": []
 }
