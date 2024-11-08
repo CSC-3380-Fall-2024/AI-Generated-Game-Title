@@ -9,14 +9,14 @@ public partial class Player : CharacterBody2D
 	bool canDash = true;
 	bool dashing = false;
 	
-	private int MAX_HEALTH = 20;
+	[Export] private int MAX_HEALTH = 20;
 	[Export] private int health;
 	
 	ProgressBar HealthBar;
 	Timer DashTimer;
 	Timer DashCooldown;
 	
-		public override void _Ready()
+	public override void _Ready()
 	{
 		InitHealth();
 		DashTimer = GetNode<Timer>("DashTimer") as Timer;
@@ -25,7 +25,8 @@ public partial class Player : CharacterBody2D
 
 	public void GetInput()
 	{
-		Vector2 inputDir = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+        LookAt(GetGlobalMousePosition());
+        Vector2 inputDir = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 		
 		if(Input.IsActionJustPressed("dash") && canDash){
 			dashing = true;
