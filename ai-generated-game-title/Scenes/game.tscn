@@ -1,11 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b6b2yunihqir8"]
+[gd_scene load_steps=10 format=3 uid="uid://b6b2yunhiqr8"]
 
-[ext_resource type="Texture2D" uid="uid://bjjj2gq3rtpoe" path="res://Textures/Grass 1.png" id="1_14gx0"]
+[ext_resource type="Texture2D" uid="uid://bbjj2gq3trpo" path="res://Textures/Grass 1.png" id="1_14gx0"]
 [ext_resource type="Script" path="res://Scripts/Player.cs" id="2_v538n"]
-[ext_resource type="Texture2D" uid="uid://d4f6ckg8r52yv" path="res://icon.svg" id="3_14hrf"]
+[ext_resource type="Texture2D" uid="uid://4df6ck8gr52yv" path="res://Textures/icon.svg" id="3_14hrf"]
 [ext_resource type="Script" path="res://Scripts/EnemySpawner.cs" id="4_stxec"]
-[ext_resource type="PackedScene" uid="uid://b8ql53fl2xx64" path="res://Scenes/Enemy.tscn" id="5_4d646"]
-[ext_resource type="PackedScene" uid="uid://btbbkvbwib0h2" path="res://Scenes/DoorToNextLevel.tscn" id="6_id3cc"]
+[ext_resource type="PackedScene" uid="uid://b8q153fl2tx64" path="res://Scenes/Enemy.tscn" id="5_4d646"]
+[ext_resource type="PackedScene" uid="uid://btbbkbwbb0h2" path="res://Scenes/DoorToNextLevel.tscn" id="6_id3cc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3osvs"]
 size = Vector2(126, 122)
@@ -24,38 +24,6 @@ offset_bottom = 720.0
 texture = ExtResource("1_14gx0")
 stretch_mode = 1
 
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(652, 345)
-collision_layer = 2
-script = ExtResource("2_v538n")
-health = 2
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_3osvs")
-
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture = ExtResource("3_14hrf")
-
-[node name="DashTimer" type="Timer" parent="Player"]
-wait_time = 0.3
-
-[node name="DashCooldown" type="Timer" parent="Player"]
-wait_time = 0.8
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
-
-[node name="HealthBar" type="ProgressBar" parent="Player/CanvasLayer"]
-offset_left = 994.0
-offset_top = 661.0
-offset_right = 1249.0
-offset_bottom = 688.0
-theme_override_styles/fill = SubResource("StyleBoxFlat_ptul4")
-step = 1.0
-value = 5.0
-show_percentage = false
-
 [node name="randowall" type="StaticBody2D" parent="."]
 position = Vector2(272, 353)
 metadata/_edit_group_ = true
@@ -69,21 +37,19 @@ texture = ExtResource("3_14hrf")
 position = Vector2(24.5, 6.5)
 shape = SubResource("RectangleShape2D_b3x27")
 
-[node name="EnemySpawner" type="Node2D" parent="." node_paths=PackedStringArray("spawn_points")]
-script = ExtResource("4_stxec")
-enemy_scn = ExtResource("5_4d646")
-spawn_points = [NodePath("SpawnPoint"), NodePath("SpawntPoint2"), NodePath("SpawntPoint3"), NodePath("SpawntPoint4")]
+[node name="Player" parent="." instance=ExtResource("5_1eu0x")]
+position = Vector2(641, 360)
 
-[node name="SpawnPoint" type="Node2D" parent="EnemySpawner"]
+[node name="Spawner" parent="." instance=ExtResource("5_8kagm")]
 
-[node name="SpawntPoint2" type="Node2D" parent="EnemySpawner"]
-position = Vector2(1288, -1)
+[node name="Spawner2" parent="." instance=ExtResource("5_8kagm")]
+position = Vector2(1280, -3)
 
-[node name="SpawntPoint3" type="Node2D" parent="EnemySpawner"]
-position = Vector2(1274, 713)
+[node name="Spawner3" parent="." instance=ExtResource("5_8kagm")]
+position = Vector2(-4, 724)
 
-[node name="SpawntPoint4" type="Node2D" parent="EnemySpawner"]
-position = Vector2(-6, 717)
+[node name="Spawner4" parent="." instance=ExtResource("5_8kagm")]
+position = Vector2(1281, 722)
 
 [node name="DoorToNextLevel" parent="." instance=ExtResource("6_id3cc")]
 position = Vector2(930, 351)
@@ -92,3 +58,4 @@ position = Vector2(930, 351)
 [connection signal="timeout" from="Player/DashCooldown" to="Player" method="_on_dash_cooldown_timeout"]
 
 [editable path="DoorToNextLevel"]
+

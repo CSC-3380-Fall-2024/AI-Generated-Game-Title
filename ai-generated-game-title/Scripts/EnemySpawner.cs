@@ -4,7 +4,6 @@ using System;
 public partial class EnemySpawner: Node2D {
 	
 	[Export] PackedScene enemy_scn;
-	[Export] Node2D[] spawn_points;
 	[Export] float eps = 1f;
 
 	float spawn_rate;
@@ -26,7 +25,7 @@ public partial class EnemySpawner: Node2D {
 
 	private void Spawn() {
 		RandomNumberGenerator rng = new RandomNumberGenerator();
-		Vector2 location = spawn_points[rng.Randi() % spawn_points.Length].GlobalPosition;
+		Vector2 location = this.GlobalPosition;
 		Enemy enemy = (Enemy)enemy_scn.Instantiate();
 		enemy.GlobalPosition = location;
 		GetTree().Root.AddChild(enemy);
