@@ -1,9 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6b2yunihqir8"]
+[gd_scene load_steps=10 format=3 uid="uid://b6b2yunhiqr8"]
 
-[ext_resource type="Texture2D" uid="uid://bjjj2gq3rtpoe" path="res://Textures/Grass 1.png" id="1_14gx0"]
-[ext_resource type="Texture2D" uid="uid://d4f6ckg8r52yv" path="res://Textures/icon.svg" id="3_14hrf"]
-[ext_resource type="PackedScene" uid="uid://cnos7k3b76i1b" path="res://Scenes/player.tscn" id="5_1eu0x"]
-[ext_resource type="PackedScene" uid="uid://bl8lxkquucv7k" path="res://Scenes/spawner.tscn" id="5_8kagm"]
+[ext_resource type="Texture2D" uid="uid://bbjj2gq3trpo" path="res://Textures/Grass 1.png" id="1_14gx0"]
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="2_v538n"]
+[ext_resource type="Texture2D" uid="uid://4df6ck8gr52yv" path="res://Textures/icon.svg" id="3_14hrf"]
+[ext_resource type="Script" path="res://Scripts/EnemySpawner.cs" id="4_stxec"]
+[ext_resource type="PackedScene" uid="uid://b8q153fl2tx64" path="res://Scenes/Enemy.tscn" id="5_4d646"]
+[ext_resource type="PackedScene" uid="uid://btbbkbwbb0h2" path="res://Scenes/DoorToNextLevel.tscn" id="6_id3cc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3osvs"]
+size = Vector2(126, 122)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptul4"]
+bg_color = Color(0.160784, 1, 0.494118, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b3x27"]
 size = Vector2(69, 477)
@@ -42,3 +50,12 @@ position = Vector2(-4, 724)
 
 [node name="Spawner4" parent="." instance=ExtResource("5_8kagm")]
 position = Vector2(1281, 722)
+
+[node name="DoorToNextLevel" parent="." instance=ExtResource("6_id3cc")]
+position = Vector2(930, 351)
+
+[connection signal="timeout" from="Player/DashTimer" to="Player" method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="Player/DashCooldown" to="Player" method="_on_dash_cooldown_timeout"]
+
+[editable path="DoorToNextLevel"]
+
