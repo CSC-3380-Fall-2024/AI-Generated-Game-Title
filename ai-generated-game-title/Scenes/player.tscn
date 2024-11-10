@@ -1,48 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnos7k3b76i1b"]
+[gd_scene load_steps=3 format=3 uid="uid://cnos7k3b76i1b"]
 
-[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_i6nyg"]
-[ext_resource type="Script" path="res://Scripts/Gun.cs" id="2_a1mew"]
-[ext_resource type="Texture2D" uid="uid://d4f6ckg8r52yv" path="res://Textures/icon.svg" id="2_l8gs2"]
-[ext_resource type="PackedScene" uid="uid://dpappfggbkuyy" path="res://Scenes/bullet.tscn" id="3_88eop"]
+[ext_resource type="Texture2D" uid="uid://d4f6ckg8r52yv" path="res://icon.svg" id="1_pojr7"]
+[ext_resource type="Script" path="res://Scripts/Sprite2d.cs" id="2_0gnb8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j00h5"]
-size = Vector2(126, 122)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36xaq"]
-bg_color = Color(0.160784, 1, 0.494118, 1)
-
-[node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_i6nyg")
-
-[node name="Gun" type="Node2D" parent="."]
-position = Vector2(72, 0)
-script = ExtResource("2_a1mew")
-Bullet_scn = ExtResource("3_88eop")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_j00h5")
+[node name="Player" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_l8gs2")
-
-[node name="DashTimer" type="Timer" parent="."]
-wait_time = 0.3
-
-[node name="DashCooldown" type="Timer" parent="."]
-wait_time = 0.8
-
-[node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HealthBar" type="ProgressBar" parent="CanvasLayer"]
-offset_left = 1009.0
-offset_top = 678.0
-offset_right = 1264.0
-offset_bottom = 705.0
-theme_override_styles/fill = SubResource("StyleBoxFlat_36xaq")
-step = 1.0
-value = 5.0
-show_percentage = false
-metadata/_edit_use_anchors_ = true
+position = Vector2(632, 340)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_pojr7")
+script = ExtResource("2_0gnb8")
