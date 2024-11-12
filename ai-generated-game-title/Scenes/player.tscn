@@ -46,3 +46,6 @@ step = 1.0
 value = 5.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
+
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
