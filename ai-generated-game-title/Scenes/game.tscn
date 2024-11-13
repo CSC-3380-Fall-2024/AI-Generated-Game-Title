@@ -2,15 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://bjjj2gq3rtpoe" path="res://Textures/Grass 1.png" id="1_cj1qr"]
 [ext_resource type="Texture2D" uid="uid://d4f6ckg8r52yv" path="res://Textures/icon.svg" id="2_uyt1j"]
-[ext_resource type="PackedScene" uid="uid://cnos7k3b76i1b" path="res://Scenes/Player.tscn" id="3_0b5wt"]
-[ext_resource type="PackedScene" uid="uid://bl8lxkquucv7k" path="res://Scenes/Spawner.tscn" id="4_dafna"]
+[ext_resource type="PackedScene" uid="uid://cnos7k3b76i1b" path="res://Scenes/player.tscn" id="3_0b5wt"]
+[ext_resource type="PackedScene" uid="uid://bl8lxkquucv7k" path="res://Scenes/spawner.tscn" id="4_dafna"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_060ry"]
 size = Vector2(69, 477)
 
 [node name="Game" type="Node2D"]
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="ActualGame" type="Node2D" parent="."]
+
+[node name="Background" type="TextureRect" parent="ActualGame"]
 offset_left = -3056.0
 offset_top = -2147.0
 offset_right = 5059.0
@@ -18,72 +20,76 @@ offset_bottom = 3039.0
 texture = ExtResource("1_cj1qr")
 stretch_mode = 1
 
-[node name="randowall" type="StaticBody2D" parent="."]
+[node name="randowall" type="StaticBody2D" parent="ActualGame"]
 position = Vector2(272, 353)
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="randowall"]
+[node name="Sprite2D" type="Sprite2D" parent="ActualGame/randowall"]
 position = Vector2(24, 5.5)
 scale = Vector2(0.546875, 3.72656)
 texture = ExtResource("2_uyt1j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="randowall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActualGame/randowall"]
 position = Vector2(24.5, 6.5)
 shape = SubResource("RectangleShape2D_060ry")
 
-[node name="randowall2" type="StaticBody2D" parent="."]
+[node name="randowall2" type="StaticBody2D" parent="ActualGame"]
 position = Vector2(763, 617)
 rotation = 1.5708
 scale = Vector2(1, 0.75)
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="randowall2"]
+[node name="Sprite2D" type="Sprite2D" parent="ActualGame/randowall2"]
 position = Vector2(24, 5.5)
 scale = Vector2(0.546875, 3.72656)
 texture = ExtResource("2_uyt1j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="randowall2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActualGame/randowall2"]
 position = Vector2(24.5, 6.5)
 shape = SubResource("RectangleShape2D_060ry")
 
-[node name="randowall3" type="StaticBody2D" parent="."]
+[node name="randowall3" type="StaticBody2D" parent="ActualGame"]
 position = Vector2(875, 359)
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="randowall3"]
+[node name="Sprite2D" type="Sprite2D" parent="ActualGame/randowall3"]
 position = Vector2(24, 5.5)
 scale = Vector2(0.546875, 3.72656)
 texture = ExtResource("2_uyt1j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="randowall3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActualGame/randowall3"]
 position = Vector2(24.5, 6.5)
 shape = SubResource("RectangleShape2D_060ry")
 
-[node name="randowall4" type="StaticBody2D" parent="."]
+[node name="randowall4" type="StaticBody2D" parent="ActualGame"]
 position = Vector2(607, 68)
 rotation = 1.5708
 scale = Vector2(1, 1.4)
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="randowall4"]
+[node name="Sprite2D" type="Sprite2D" parent="ActualGame/randowall4"]
 position = Vector2(24, 5.5)
 scale = Vector2(0.546875, 3.72656)
 texture = ExtResource("2_uyt1j")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="randowall4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActualGame/randowall4"]
 position = Vector2(24.5, 6.5)
 shape = SubResource("RectangleShape2D_060ry")
 
-[node name="Player" parent="." instance=ExtResource("3_0b5wt")]
+[node name="Player" parent="ActualGame" instance=ExtResource("3_0b5wt")]
 position = Vector2(641, 360)
 
-[node name="Spawner" parent="." instance=ExtResource("4_dafna")]
+[node name="Spawner" parent="ActualGame" instance=ExtResource("4_dafna")]
 
-[node name="Spawner2" parent="." instance=ExtResource("4_dafna")]
+[node name="Spawner2" parent="ActualGame" instance=ExtResource("4_dafna")]
 position = Vector2(1280, -3)
 
-[node name="Spawner3" parent="." instance=ExtResource("4_dafna")]
+[node name="Spawner3" parent="ActualGame" instance=ExtResource("4_dafna")]
 position = Vector2(-4, 724)
 
-[node name="Spawner4" parent="." instance=ExtResource("4_dafna")]
+[node name="Spawner4" parent="ActualGame" instance=ExtResource("4_dafna")]
 position = Vector2(1281, 722)
+
+[node name="GlobalVar1" type="Node" parent="."]
+
+[node name="GlobalVar2" type="Node" parent="."]
