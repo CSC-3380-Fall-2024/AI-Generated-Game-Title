@@ -4,7 +4,6 @@ using System;
 public partial class Gun : Node2D
 {
 	[Export] PackedScene Bullet_scn;
-	[Export] float Bullet_speed = 600f;
 	[Export] float Bullets_per_second = 5f;
 	[Export] float Bullets_damage = 10f;
 
@@ -22,11 +21,11 @@ public partial class Gun : Node2D
 	{
 		if (Input.IsActionJustPressed("shoot") && time_until_fire > fire_rate)
 		{
-			RigidBody2D bullet = Bullet_scn.Instantiate<RigidBody2D>();
+			Bullet bullet = Bullet_scn.Instantiate<Bullet>();
+			bullet.damage = (int)Bullets_damage;
 
 			bullet.Rotation = GlobalRotation;
 			bullet.GlobalPosition = GlobalPosition;
-			bullet.LinearVelocity = bullet.Transform.X * Bullet_speed;
 
 			GetTree().Root.AddChild(bullet);
 

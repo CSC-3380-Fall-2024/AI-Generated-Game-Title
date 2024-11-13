@@ -5,6 +5,7 @@ public partial class Enemy : CharacterBody2D
 {
 	Player Player;
 	[Export] float speed = 150f;
+	[Export] public int health = 10;
 
 
 	public override void _Ready(){
@@ -23,7 +24,5 @@ public partial class Enemy : CharacterBody2D
 		}
 		MoveAndSlide();
 	}
-
-
 
 }
