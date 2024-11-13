@@ -12,9 +12,6 @@ public partial class Enemy : CharacterBody2D
 		Player = (Player)GetTree().Root.GetNode("Game").GetNode("Player");
 	}
 
-	public override void _Process(double delta){
-
-	}
 	public override void _PhysicsProcess(double delta) {
 		if(Player != null)  {
 			Vector2 direction = (Player.GlobalPosition - GlobalPosition).Normalized();

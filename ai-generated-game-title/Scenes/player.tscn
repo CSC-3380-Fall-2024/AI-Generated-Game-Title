@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Player.cs" id="1_i6nyg"]
 [ext_resource type="Script" path="res://Scripts/Gun.cs" id="2_a1mew"]
 [ext_resource type="Texture2D" uid="uid://d4f6ckg8r52yv" path="res://Textures/icon.svg" id="2_l8gs2"]
-[ext_resource type="PackedScene" path="res://Scenes/bullet.tscn" id="3_88eop"]
+[ext_resource type="PackedScene" uid="uid://dpappfggbkuyy" path="res://Scenes/Bullet.tscn" id="3_88eop"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j00h5"]
 size = Vector2(126, 122)
@@ -34,6 +34,7 @@ wait_time = 0.3
 wait_time = 0.8
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.75, 0.75)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

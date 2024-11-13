@@ -17,7 +17,7 @@ public partial class Gun : Node2D
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	public override void _PhysicsProcess(double delta)
 	{
 		if (Input.IsActionJustPressed("shoot") && time_until_fire > fire_rate)
 		{

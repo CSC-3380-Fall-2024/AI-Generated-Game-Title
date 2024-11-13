@@ -35,6 +35,14 @@ public partial class Player : CharacterBody2D
 			DashCooldown.Start();
 		}
 		
+		if(Input.IsActionJustPressed("damageplayerjustbecause")){
+			Damage(5);
+		}
+		
+		if(Input.IsActionJustPressed("ui_cancel")){
+			GetTree().Quit();
+		}
+		
 		if(dashing){
 			Velocity = inputDir * dashSpeed;
 		} else {
@@ -69,11 +77,8 @@ public partial class Player : CharacterBody2D
 		canDash = true;
 	}
 
-	public override void _Process(double delta)
+	public override void _PhysicsProcess(double delta)
 	{
-		if(Input.IsActionJustPressed("damageplayerjustbecause")){
-			Damage(5);
-		}
 		GetInput();
 		MoveAndSlide();
 	}
