@@ -1,20 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://dpappfggbkuyy"]
 
-[ext_resource type="Script" path="res://Scripts/Bullet.cs" id="1_bjwrt"]
-[ext_resource type="Texture2D" uid="uid://ncr2bpx8e4ph" path="res://Sprites/Bullet.png" id="2_ekvvr"]
+[ext_resource type="Script" path="res://Scripts/Bullet.cs" id="1_7t0r3"]
+[ext_resource type="Texture2D" uid="uid://ncr2bpx8e4ph" path="res://Sprites/Bullet.png" id="2_wteuu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x774g"]
 radius = 8.0
 
 [node name="Bullet" type="Area2D"]
-script = ExtResource("1_bjwrt")
+collision_layer = 8
+collision_mask = 5
+script = ExtResource("1_7t0r3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_x774g")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_ekvvr")
+texture = ExtResource("2_wteuu")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

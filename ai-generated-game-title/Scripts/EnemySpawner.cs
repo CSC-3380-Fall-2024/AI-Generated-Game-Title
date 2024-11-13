@@ -14,7 +14,7 @@ public partial class EnemySpawner: Node2D {
 		spawn_rate = 1 / eps;
 	}
 
-	public override void _Process(double delta) {
+	public override void _PhysicsProcess(double delta) {
 		if (time_until_spawn > spawn_rate) {
 			Spawn();
 			time_until_spawn = 0;
