@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bjjj2gq3rtpoe" path="res://Textures/Grass 1.png" id="1_14gx0"]
 [ext_resource type="Texture2D" uid="uid://d4f6ckg8r52yv" path="res://Textures/icon.svg" id="3_14hrf"]
 [ext_resource type="PackedScene" uid="uid://cnos7k3b76i1b" path="res://Scenes/player.tscn" id="5_1eu0x"]
-[ext_resource type="PackedScene" path="res://Scenes/spawner.tscn" id="5_8kagm"]
+[ext_resource type="PackedScene" uid="uid://bl8lxkquucv7k" path="res://Scenes/spawner.tscn" id="5_8kagm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b3x27"]
 size = Vector2(69, 477)

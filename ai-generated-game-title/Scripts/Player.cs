@@ -25,8 +25,8 @@ public partial class Player : CharacterBody2D
 
 	public void GetInput()
 	{
-        LookAt(GetGlobalMousePosition());
-        Vector2 inputDir = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+		LookAt(GetGlobalMousePosition());
+		Vector2 inputDir = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 		
 		if(Input.IsActionJustPressed("dash") && canDash){
 			dashing = true;
