@@ -9,7 +9,7 @@ public partial class Enemy : CharacterBody2D
 
 
 	public override void _Ready(){
-		Player = (Player)GetTree().Root.GetNode("Game").GetNode("ActualGame").GetNode("Player");
+		Player = (Player)GetTree().Root.GetNode("Game").FindChild("Player");
 	}
 
 	public override void _PhysicsProcess(double delta) {

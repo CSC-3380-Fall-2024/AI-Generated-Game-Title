@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://csec14keokhrb"]
+
+[ext_resource type="Texture2D" uid="uid://d4f6ckg8r52yv" path="res://Textures/icon.svg" id="1_8ww2c"]
+[ext_resource type="Script" path="res://Scripts/LevelPortal.cs" id="1_bddbv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wkef"]
+size = Vector2(139, 136)
+
+[node name="LevelPortal" type="Node2D"]
+script = ExtResource("1_bddbv")
+
+[node name="LevelBody" type="RigidBody2D" parent="."]
+collision_layer = 32
+collision_mask = 2
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="LevelBody"]
+texture = ExtResource("1_8ww2c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelBody"]
+position = Vector2(1.5, 1)
+shape = SubResource("RectangleShape2D_3wkef")

@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6b2yunihqir8"]
+[gd_scene load_steps=8 format=3 uid="uid://b6b2yunihqir8"]
 
 [ext_resource type="Texture2D" uid="uid://bjjj2gq3rtpoe" path="res://Textures/Grass 1.png" id="1_cj1qr"]
 [ext_resource type="Texture2D" uid="uid://d4f6ckg8r52yv" path="res://Textures/icon.svg" id="2_uyt1j"]
 [ext_resource type="PackedScene" uid="uid://cnos7k3b76i1b" path="res://Scenes/player.tscn" id="3_0b5wt"]
 [ext_resource type="PackedScene" uid="uid://bl8lxkquucv7k" path="res://Scenes/spawner.tscn" id="4_dafna"]
+[ext_resource type="PackedScene" uid="uid://csec14keokhrb" path="res://Scenes/LevelPortal.tscn" id="5_y160d"]
+[ext_resource type="Script" path="res://Scripts/LevelLoader.cs" id="6_0p33m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_060ry"]
 size = Vector2(69, 477)
@@ -90,6 +92,10 @@ position = Vector2(-4, 724)
 [node name="Spawner4" parent="ActualGame" instance=ExtResource("4_dafna")]
 position = Vector2(1281, 722)
 
+[node name="LevelPortal" parent="ActualGame" instance=ExtResource("5_y160d")]
+position = Vector2(435, 236)
+
 [node name="GlobalVar1" type="Node" parent="."]
 
-[node name="GlobalVar2" type="Node" parent="."]
+[node name="LevelLoader" type="Node" parent="."]
+script = ExtResource("6_0p33m")
