@@ -3,10 +3,16 @@ using System;
 
 public partial class Bullet : RigidBody2D
 {
-	// Called when the node enters the scene tree for the first time.
+	[Export] public float Bullet_hang_time = 1f;
+	
 	public override void _Ready()
 	{
-		Timer timer = GetNode<Timer>("Timer");
+		Timer timer = new Timer();
+		AddChild(timer);
+		
+		timer.WaitTime = Bullet_hang_time;
 		timer.Timeout += () => QueueFree();
+		timer.OneShot = true;
+		timer.Start();
 	}
 }
