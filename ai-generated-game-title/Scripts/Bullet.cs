@@ -21,6 +21,8 @@ public partial class Bullet : Area2D
 		if (body is Enemy enemy) {
 			enemy.health -= damage;
 			if (enemy.health <= 0) {
+				NumofEnemiesKilled numkilled = (NumofEnemiesKilled)GetTree().Root.GetNode("Game").GetNode("NumofEnemiesKilled");
+				numkilled.numofenemieskilled += 1;
 				enemy.QueueFree();
 			}
 		}
