@@ -25,14 +25,22 @@ public partial class Player : CharacterBody2D
 
 	public void GetInput()
 	{
-        LookAt(GetGlobalMousePosition());
-        Vector2 inputDir = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+		LookAt(GetGlobalMousePosition());
+		Vector2 inputDir = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 		
 		if(Input.IsActionJustPressed("dash") && canDash){
 			dashing = true;
 			canDash = false;
 			DashTimer.Start();
 			DashCooldown.Start();
+		}
+		
+		if(Input.IsActionJustPressed("damageplayerjustbecause")){
+			Damage(5);
+		}
+		
+		if(Input.IsActionJustPressed("ui_cancel")){
+			GetTree().Quit();
 		}
 		
 		if(dashing){
@@ -69,11 +77,8 @@ public partial class Player : CharacterBody2D
 		canDash = true;
 	}
 
-	public override void _Process(double delta)
+	public override void _PhysicsProcess(double delta)
 	{
-		if(Input.IsActionJustPressed("damageplayerjustbecause")){
-			Damage(5);
-		}
 		GetInput();
 		MoveAndSlide();
 	}

@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxj53w6tc22t5"]
+
+[ext_resource type="Script" path="res://Scripts/MainMenu.cs" id="1_51h72"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_51h72")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = 25.5
+offset_right = 202.0
+offset_bottom = 168.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -95.5
+offset_top = 131.0
+offset_right = 93.5
+offset_bottom = 154.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "AI Generated Game Title"
+
+[connection signal="button_up" from="VBoxContainer/StartButton" to="." method="_on_start_button_button_up"]
+[connection signal="button_up" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_button_up"]

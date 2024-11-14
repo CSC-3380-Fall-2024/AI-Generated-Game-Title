@@ -23,7 +23,7 @@ public partial class Gun : Node2D
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+	public override void _PhysicsProcess(double delta)
 	{
 		if (Input.IsActionJustPressed("shoot") && time_until_fire > fire_rate)
 		{
@@ -37,6 +37,7 @@ public partial class Gun : Node2D
 					bulletInstance.Bullet_hang_time = Bullet_hang_time;
 				}
 
+		  	bullet.damage = (int)Bullets_damage;
 				Random rnd = new Random();
 				float Positive_or_negitive = 1;
 				if (rnd.Next() % 2 == 1)
