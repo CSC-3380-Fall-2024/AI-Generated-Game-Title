@@ -10,6 +10,7 @@ public partial class Bullet : Area2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		this.BodyEntered += shootEnemy;
 		Timer timer = new Timer();
 		AddChild(timer);
 		timer.WaitTime = Bullet_hang_time;
