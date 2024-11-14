@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8ql53fl2xx64"]
+[gd_scene load_steps=5 format=3 uid="uid://b8ql53fl2xx64"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.cs" id="1_tyn2d"]
 [ext_resource type="Texture2D" uid="uid://d4f6ckg8r52yv" path="res://Textures/icon.svg" id="2_0ktgd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmm7g"]
 size = Vector2(124, 123)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sf231"]
+bg_color = Color(0.581976, 0.13023, 0.235185, 1)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_layer = 4
@@ -16,3 +19,12 @@ shape = SubResource("RectangleShape2D_nmm7g")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_0ktgd")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -63.0
+offset_top = -96.0
+offset_right = 62.0
+offset_bottom = -69.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_sf231")
+value = 100.0
+show_percentage = false
