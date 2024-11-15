@@ -4,7 +4,7 @@ using System;
 public partial class Bullet : Area2D
 {
 	public float Bullet_hang_time = 1f;
-	public int damage = 0;
+	public int Bullet_damage = 0;
 	public float Bullet_speed = 1200f;
 	
 	// Called when the node enters the scene tree for the first time.
@@ -24,7 +24,7 @@ public partial class Bullet : Area2D
 	}
 	private void shootEnemy(Node body) {
 		if (body is Enemy enemy) {
-			enemy.health -= damage;
+			enemy.health -= Bullet_damage;
 			if (enemy.health <= 0) {
 				NumofEnemiesKilled numkilled = (NumofEnemiesKilled)GetTree().Root.GetNode("Game").GetNode("NumofEnemiesKilled");
 				numkilled.numofenemieskilled += 1;
