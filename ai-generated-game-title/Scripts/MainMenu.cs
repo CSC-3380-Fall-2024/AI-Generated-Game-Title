@@ -9,7 +9,7 @@ public partial class MainMenu : Control
 	}
 
 	public void _on_start_button_button_up(){
-		GetTree().ChangeSceneToFile("res://Scenes/Game.tscn");
+		GetTree().ChangeSceneToFile("res://Scenes/game.tscn");
 	}
 	
 	public void _on_quit_button_button_up(){
