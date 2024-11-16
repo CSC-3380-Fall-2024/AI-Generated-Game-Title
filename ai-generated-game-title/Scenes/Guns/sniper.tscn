@@ -7,4 +7,6 @@
 script = ExtResource("1_48yg7")
 Bullet_scn = ExtResource("2_f82eb")
 Bullet_speed = 3500.0
-Bullets_per_second = 10.0
+Bullets_per_second = 1.0
+Bullet_damage = 50
+Bullet_penetration = 5

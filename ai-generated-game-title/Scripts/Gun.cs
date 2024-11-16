@@ -11,6 +11,7 @@ public partial class Gun : Node2D
 	[Export] float Bullets_per_second = 5f;
 	[Export] int Bullet_damage = 10;
 	[Export] float Bullet_hang_time = 1f;
+	[Export] int Bullet_penetration = 0;
 
 	float fire_rate;
 
@@ -36,6 +37,7 @@ public partial class Gun : Node2D
 				{
 					bulletInstance.Bullet_hang_time = Bullet_hang_time;
 					bulletInstance.Bullet_damage = Bullet_damage;
+					bulletInstance.Bullet_penetration = Bullet_penetration;
 				}
 				/*
 				Creates a random number between -max spread and max spread to add inconsistancy to

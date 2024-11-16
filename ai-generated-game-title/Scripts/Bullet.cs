@@ -6,6 +6,8 @@ public partial class Bullet : Area2D
 	public float Bullet_hang_time = 1f;
 	public int Bullet_damage = 0;
 	public float Bullet_speed = 1200f;
+	public int Bullet_penetration = 0;
+	int penetration_count = 0;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -31,6 +33,13 @@ public partial class Bullet : Area2D
 				enemy.QueueFree();
 			}
 		}
-		QueueFree();
+		if (penetration_count >= Bullet_penetration)
+		{
+			QueueFree();
+		}
+		else
+		{
+			penetration_count++;
+		}
 	}
 }
