@@ -14,8 +14,8 @@ offset_bottom = 3039.0
 texture = ExtResource("1_s12cb")
 stretch_mode = 1
 
-[node name="Boss" parent="." instance=ExtResource("2_kl27t")]
-health = 100
-
 [node name="Player" parent="." instance=ExtResource("3_tkjc6")]
 position = Vector2(579, 200)
+
+[node name="Boss" parent="." instance=ExtResource("2_kl27t")]
+health = 100

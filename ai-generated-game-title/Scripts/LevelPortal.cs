@@ -16,16 +16,21 @@ public partial class LevelPortal : Node2D
 	}
 	
 	void loadNextLevel(){
-		GD.Print("loading level");
+		GD.Print("door touched");
 		RigidBody2D bod = (RigidBody2D)this.GetNode("PortalBody");
 		bod.SetSleeping(true);
 		NumofEnemiesKilled numkilled = (NumofEnemiesKilled)GetTree().Root.GetNode("Game").GetNode("NumofEnemiesKilled");
 		if(numkilled.numofenemieskilled >= 30){
+			GD.Print("trying to actually load level");
 			GetTree().Root.GetNode("Game").GetNode("ActualGame").QueueFree();
 			var scene = (PackedScene)GD.Load("res://Scenes/BossFight.tscn");
 			var instance = (Node2D)scene.Instantiate();
-			GetTree().Root.GetNode("Game").AddChild(instance);
+			CallDeferred("addNextLevelScene", (Node2D)instance);
 		}
 		
+	}
+	
+	void addNextLevelScene(Node2D level){
+		GetTree().Root.GetNode("Game").AddChild(level);
 	}
 }
