@@ -3,6 +3,7 @@ using System;
 
 public partial class Bullet : Area2D
 {
+	public bool enemyBullet = false;
 	public float Bullet_hang_time = 1f;
 	public int Bullet_damage = 0;
 	public float Bullet_speed = 1200f;
