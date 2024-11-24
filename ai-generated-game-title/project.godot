@@ -25,6 +25,10 @@ window/stretch/mode="canvas_items"
 
 project/assembly_name="AI Generated Game Title"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
+
 [input]
 
 ui_left={
