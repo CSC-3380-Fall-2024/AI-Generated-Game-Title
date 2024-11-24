@@ -20,10 +20,10 @@ public partial class LevelPortal : Node2D
 		RigidBody2D bod = (RigidBody2D)this.GetNode("PortalBody");
 		bod.SetSleeping(true);
 		NumofEnemiesKilled numkilled = (NumofEnemiesKilled)GetTree().Root.GetNode("Game").GetNode("NumofEnemiesKilled");
-		if(numkilled.numofenemieskilled >= 30){
+		if(numkilled.numofenemieskilled >= 20){
 			GD.Print("trying to actually load level");
 			GetTree().Root.GetNode("Game").GetNode("ActualGame").QueueFree();
-			var scene = (PackedScene)GD.Load("res://Scenes/BossFight.tscn");
+			var scene = (PackedScene)GD.Load("res://Scenes/StreetLevel.tscn");
 			var instance = (Node2D)scene.Instantiate();
 			CallDeferred("addNextLevelScene", (Node2D)instance);
 		}
