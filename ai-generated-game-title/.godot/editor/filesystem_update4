@@ -1,0 +1,15 @@
+res://Scenes/MainMenu.tscn
+res://Scripts/Bullet.cs
+res://Scenes/Enemy.tscn
+res://Scenes/bullet.tscn
+res://Scenes/TestEnemyAnimated.tscn
+res://Scenes/player.tscn
+res://Scripts/Enemy.cs
+res://Scripts/Player.cs
+res://Scripts/GunSwap.cs
+res://Scripts/MainMenu.cs
+res://Scripts/EnemySpawner.cs
+res://Scripts/NumofEnemiesKilled.cs
+res://Scripts/Gun.cs
+res://Scripts/Game.cs
+res://Scripts/LevelPortal.cs
