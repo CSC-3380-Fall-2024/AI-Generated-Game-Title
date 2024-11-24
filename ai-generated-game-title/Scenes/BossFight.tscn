@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bjjj2gq3rtpoe" path="res://Textures/Grass 1.png" id="1_s12cb"]
 [ext_resource type="PackedScene" uid="uid://b8ql53fl2xx64" path="res://Scenes/Enemy.tscn" id="2_kl27t"]
-[ext_resource type="PackedScene" uid="uid://cnos7k3b76i1b" path="res://Scenes/player.tscn" id="3_tkjc6"]
+[ext_resource type="PackedScene" uid="uid://cnos7k3b76i1b" path="res://Scenes/Player.tscn" id="3_tkjc6"]
 
 [node name="BossFight" type="Node2D"]
 
