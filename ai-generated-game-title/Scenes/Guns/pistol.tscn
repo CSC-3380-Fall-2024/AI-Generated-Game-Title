@@ -8,3 +8,4 @@ script = ExtResource("1_s0j0t")
 Bullet_scn = ExtResource("2_7hsuf")
 Bullet_max_spread = 10.0
 Bullet_speed = 1500.0
+Bullet_hang_time = 0.5

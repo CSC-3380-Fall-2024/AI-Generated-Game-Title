@@ -26,6 +26,7 @@ public partial class Gun : Node2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _PhysicsProcess(double delta)
 	{
+
 		if (Input.IsActionJustPressed("shoot") && time_until_fire > fire_rate)
 		{
 			for (int i = 0; i < Number_of_bullets; i++)
@@ -38,6 +39,7 @@ public partial class Gun : Node2D
 					bulletInstance.Bullet_hang_time = Bullet_hang_time;
 					bulletInstance.Bullet_damage = Bullet_damage;
 					bulletInstance.Bullet_penetration = Bullet_penetration;
+					bulletInstance.Bullet_speed = Bullet_speed;
 				}
 				/*
 				Creates a random number between -max spread and max spread to add inconsistancy to
