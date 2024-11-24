@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8ql53fl2xx64"]
+[gd_scene load_steps=9 format=3 uid="uid://b8ql53fl2xx64"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.cs" id="1_tyn2d"]
+[ext_resource type="PackedScene" uid="uid://dvblqbgee13op" path="res://Scenes/bullet.tscn" id="2_0ghns"]
 [ext_resource type="Texture2D" uid="uid://cnmj0mq8fs6m8" path="res://Sprites/CharacterAnimations/EvilTwitterBird/TwitterBirdIdle.png" id="2_3680s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmm7g"]
@@ -35,6 +36,7 @@ animations = [{
 collision_layer = 4
 collision_mask = 5
 script = ExtResource("1_tyn2d")
+Bullet_scn = ExtResource("2_0ghns")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_nmm7g")
