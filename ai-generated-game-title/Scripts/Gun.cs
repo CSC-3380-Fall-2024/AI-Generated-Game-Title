@@ -27,6 +27,7 @@ public partial class Gun : Node2D
 	public override void _PhysicsProcess(double delta)
 	{
 
+		LookAt(GetGlobalMousePosition());
 		if (Input.IsActionJustPressed("shoot") && time_until_fire > fire_rate)
 		{
 			for (int i = 0; i < Number_of_bullets; i++)
