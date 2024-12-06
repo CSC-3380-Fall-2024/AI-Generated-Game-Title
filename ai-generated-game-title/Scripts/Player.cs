@@ -10,7 +10,7 @@ public partial class Player : CharacterBody2D
 	bool dashing = false;
 	
 	[Export] private int MAX_HEALTH = 20;
-	[Export] public int health;
+	[Export] private int health;
 	
 	ProgressBar HealthBar;
 	Timer DashTimer;
