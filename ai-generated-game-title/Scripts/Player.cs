@@ -82,9 +82,13 @@ public partial class Player : CharacterBody2D
 	public void Damage(int amount){
 		health -= amount;
 		if(health <= 0){
-			QueueFree();
+			Die();
 		}
 		SetHealth();
+	}
+	
+	public void Die(){
+		GetTree().ChangeSceneToFile("res://Scenes/DeathScreen.tscn");
 	}
 	
 	public void _on_dash_timer_timeout(){

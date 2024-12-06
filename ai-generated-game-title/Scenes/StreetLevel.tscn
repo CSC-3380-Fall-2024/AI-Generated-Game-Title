@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://baqei2b7h65ol"]
 
 [ext_resource type="TileSet" uid="uid://d2atilibkjmtx" path="res://Textures/Tilesets/StreetTiles.tres" id="1_myw33"]
-[ext_resource type="PackedScene" uid="uid://cnos7k3b76i1b" path="res://Scenes/Player.tscn" id="2_75o80"]
+[ext_resource type="PackedScene" uid="uid://cnos7k3b76i1b" path="res://Scenes/player.tscn" id="2_75o80"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqljq"]
 size = Vector2(140, 1580)
