@@ -3,7 +3,8 @@ using System;
 
 public partial class Bullet : Area2D
 {
-	public bool enemyBullet = false; 
+	public bool enemyBullet = false;
+	public bool playerBullet = false; 
 	public float Bullet_hang_time = 1f; 
 	public int Bullet_damage = 0; 
 	public float Bullet_speed = 1200f; 
@@ -33,8 +34,12 @@ public partial class Bullet : Area2D
 	private void shootEnemy(Node body)
 	{
 	   
-		if (enemyBullet && body is Enemy)
+		if (enemyBullet && body is Enemy) {
 			return;
+		}
+		if (playerBullet && body is Player){
+			return;
+		}
 
 		if (body is Enemy enemy)
 		{
@@ -46,6 +51,13 @@ public partial class Bullet : Area2D
 				enemy.QueueFree();
 			}
 		}
+		
+		if (body is Player player)
+		{
+			player.Damage(Bullet_damage);
+
+		}
+		
 		if (penetration_count >= Bullet_penetration)
 		{
 			QueueFree(); 

@@ -10,7 +10,7 @@ public partial class Player : CharacterBody2D
 	bool dashing = false;
 	
 	[Export] private int MAX_HEALTH = 20;
-	[Export] private int health;
+	[Export] public int health;
 	
 	ProgressBar HealthBar;
 	Timer DashTimer;
@@ -82,9 +82,13 @@ public partial class Player : CharacterBody2D
 	public void Damage(int amount){
 		health -= amount;
 		if(health <= 0){
-			QueueFree();
+			Die();
 		}
 		SetHealth();
+	}
+	
+	public void Die(){
+		GetTree().ChangeSceneToFile("res://Scenes/DeathScreen.tscn");
 	}
 	
 	public void _on_dash_timer_timeout(){

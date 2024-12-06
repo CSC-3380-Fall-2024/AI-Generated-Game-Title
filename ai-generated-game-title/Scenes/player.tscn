@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnos7k3b76i1b"]
+[gd_scene load_steps=7 format=3 uid="uid://cnos7k3b76i1b"]
 
 [ext_resource type="Script" path="res://Scripts/Player.cs" id="1_i6nyg"]
 [ext_resource type="Script" path="res://Scripts/GunSwap.cs" id="3_e6naj"]
 [ext_resource type="SpriteFrames" uid="uid://nsskugdl7ipd" path="res://Sprites/CharacterAnimations/Player/PlayerSpriteFrames.tres" id="3_ovmeg"]
+[ext_resource type="AudioStream" uid="uid://bdra5h540wgg6" path="res://Sounds/dash.wav" id="4_1ffh5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j00h5"]
 size = Vector2(126, 122)
@@ -65,6 +66,9 @@ metadata/_aseprite_wizard_config_ = {
 "source": "C:/Users/troyw/OneDrive/Pictures/Pixel Art/3380 Game/CharacterAnimations/Player/PlayerIdle.aseprite"
 }
 metadata/_aseprite_wizard_source_file_hash_ = "36cfc4756a3b4162a53fc8d496f1564f"
+
+[node name="DashSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_1ffh5")
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]

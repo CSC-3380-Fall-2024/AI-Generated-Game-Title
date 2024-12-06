@@ -41,6 +41,7 @@ public partial class Gun : Node2D
 					bulletInstance.Bullet_damage = Bullet_damage;
 					bulletInstance.Bullet_penetration = Bullet_penetration;
 					bulletInstance.Bullet_speed = Bullet_speed;
+					bulletInstance.playerBullet = true;
 				}
 				/*
 				Creates a random number between -max spread and max spread to add inconsistancy to
