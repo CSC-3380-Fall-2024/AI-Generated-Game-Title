@@ -27,6 +27,7 @@ public partial class Gun : Node2D
 	public override void _PhysicsProcess(double delta)
 	{
 
+		LookAt(GetGlobalMousePosition());
 		if (Input.IsActionJustPressed("shoot") && time_until_fire > fire_rate)
 		{
 			for (int i = 0; i < Number_of_bullets; i++)
@@ -40,6 +41,7 @@ public partial class Gun : Node2D
 					bulletInstance.Bullet_damage = Bullet_damage;
 					bulletInstance.Bullet_penetration = Bullet_penetration;
 					bulletInstance.Bullet_speed = Bullet_speed;
+					bulletInstance.playerBullet = true;
 				}
 				/*
 				Creates a random number between -max spread and max spread to add inconsistancy to

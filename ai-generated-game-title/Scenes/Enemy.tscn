@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8ql53fl2xx64"]
+[gd_scene load_steps=9 format=3 uid="uid://b8ql53fl2xx64"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.cs" id="1_tyn2d"]
-[ext_resource type="Texture2D" uid="uid://d4f6ckg8r52yv" path="res://Textures/icon.svg" id="2_0ktgd"]
+[ext_resource type="PackedScene" uid="uid://dvblqbgee13op" path="res://Scenes/Bullet.tscn" id="2_0ghns"]
+[ext_resource type="Texture2D" uid="uid://cnmj0mq8fs6m8" path="res://Sprites/CharacterAnimations/EvilTwitterBird/TwitterBirdIdle.png" id="2_3680s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmm7g"]
 size = Vector2(124, 123)
@@ -9,16 +10,36 @@ size = Vector2(124, 123)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sf231"]
 bg_color = Color(0.581976, 0.13023, 0.235185, 1)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_31gvu"]
+atlas = ExtResource("2_3680s")
+region = Rect2(0, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3tgs"]
+atlas = ExtResource("2_3680s")
+region = Rect2(15, 0, 15, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gv3sg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31gvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3tgs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_layer = 4
 collision_mask = 5
 script = ExtResource("1_tyn2d")
+Bullet_scn = ExtResource("2_0ghns")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_nmm7g")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_0ktgd")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = -63.0
@@ -28,3 +49,24 @@ offset_bottom = -69.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_sf231")
 value = 100.0
 show_percentage = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1.5, -4)
+scale = Vector2(7.93333, 7.33333)
+sprite_frames = SubResource("SpriteFrames_gv3sg")
+autoplay = "default"
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://Sprites/CharacterAnimations/EvilTwitterBird",
+"o_name": "",
+"only_visible": false,
+"slice": "",
+"source": "C:/Users/troyw/OneDrive/Pictures/Pixel Art/3380 Game/CharacterAnimations/EvilTwitterBird/TwitterBirdIdle.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "228c049dd551f1f8ce566fd9a22f79af"

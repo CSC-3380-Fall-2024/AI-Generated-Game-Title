@@ -15,18 +15,36 @@ public partial class Player : CharacterBody2D
 	ProgressBar HealthBar;
 	Timer DashTimer;
 	Timer DashCooldown;
+	AnimatedSprite2D moveanims;
 	
 	public override void _Ready()
 	{
 		InitHealth();
 		DashTimer = GetNode<Timer>("DashTimer") as Timer;
 		DashCooldown = GetNode<Timer>("DashCooldown") as Timer;
+		moveanims = GetNode<AnimatedSprite2D>("MovementAnimations") as AnimatedSprite2D;
 	}
 
 	public void GetInput()
 	{
-		LookAt(GetGlobalMousePosition());
+		
 		Vector2 inputDir = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+		
+		if(inputDir[0] < 0){
+			moveanims.SetAnimation("left");
+		}
+		else if (inputDir[0] > 0){
+			moveanims.SetAnimation("right");
+		}
+		else if (inputDir[0] == 0 && inputDir[1] > 0){
+			moveanims.SetAnimation("down");
+		}
+		else if (inputDir[0] == 0 && inputDir[1] < 0){
+			moveanims.SetAnimation("up");
+		}
+		else{
+			moveanims.SetAnimation("default");
+		}
 		
 		if(Input.IsActionJustPressed("dash") && canDash){
 			dashing = true;
@@ -64,9 +82,13 @@ public partial class Player : CharacterBody2D
 	public void Damage(int amount){
 		health -= amount;
 		if(health <= 0){
-			QueueFree();
+			Die();
 		}
 		SetHealth();
+	}
+	
+	public void Die(){
+		GetTree().ChangeSceneToFile("res://Scenes/DeathScreen.tscn");
 	}
 	
 	public void _on_dash_timer_timeout(){
