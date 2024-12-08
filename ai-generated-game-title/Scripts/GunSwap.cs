@@ -15,6 +15,7 @@ public partial class GunSwap : Node2D
 		Gun_list.Add(ResourceLoader.Load<PackedScene>("res://Scenes/Guns/pistol.tscn"));
 		Gun_list.Add(ResourceLoader.Load<PackedScene>("res://Scenes/Guns/shotgun.tscn"));
 		Gun_list.Add(ResourceLoader.Load<PackedScene>("res://Scenes/Guns/sniper.tscn"));
+		Gun_list.Add(ResourceLoader.Load<PackedScene>("res://Scenes/Guns/uzi.tscn"));
 
 		// Instantiate and add the initial gun to the scene
 		currentGunInstance = Gun_list[Current_gun].Instantiate<Node2D>();

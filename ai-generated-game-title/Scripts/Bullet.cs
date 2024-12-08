@@ -26,7 +26,7 @@ public partial class Bullet : Area2D
 		timer.OneShot = true;
 		timer.Start();
 
-		this.BodyEntered += shootEnemy;
+		this.BodyEntered += Shoot;
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -35,7 +35,7 @@ public partial class Bullet : Area2D
 		GlobalPosition += movement * (float)delta;
 	}
 
-	private void shootEnemy(Node body)
+	private void Shoot(Node body)
 	{
 	   
 		if (enemyBullet && body is Enemy) {
@@ -54,12 +54,11 @@ public partial class Bullet : Area2D
 				numkilled.numofenemieskilled += 1;
 				enemy.QueueFree();
 			}
-		}
-		
-		if (body is Player player)
+		} else if (body is Player player)
 		{
 			player.Damage(Bullet_damage);
-
+		} else {
+			QueueFree();
 		}
 		
 		if (penetration_count >= Bullet_penetration)

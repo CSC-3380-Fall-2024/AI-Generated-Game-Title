@@ -12,6 +12,7 @@ public partial class Gun : Node2D
 	[Export] int Bullet_damage = 10;
 	[Export] float Bullet_hang_time = 1f;
 	[Export] int Bullet_penetration = 0;
+	[Export] AudioStreamPlayer2D GunSound;
 
 	float fire_rate;
 
@@ -19,6 +20,7 @@ public partial class Gun : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		GunSound = GetNode<AudioStreamPlayer2D>("GunSound") as AudioStreamPlayer2D;
 		Bullet_max_spread /= 100;
 		fire_rate = 1 / Bullets_per_second;
 	}
@@ -28,8 +30,9 @@ public partial class Gun : Node2D
 	{
 
 		LookAt(GetGlobalMousePosition());
-		if (Input.IsActionJustPressed("shoot") && time_until_fire > fire_rate)
+		if (Input.IsActionPressed("shoot") && time_until_fire > fire_rate)
 		{
+			GunSound.Play();
 			for (int i = 0; i < Number_of_bullets; i++)
 			{
 				Area2D bullet = Bullet_scn.Instantiate<Area2D>();
