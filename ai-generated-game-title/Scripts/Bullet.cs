@@ -4,14 +4,18 @@ using System;
 public partial class Bullet : Area2D
 {
 	public bool enemyBullet = false;
-	public bool playerBullet = false; 
-	public float Bullet_hang_time = 1f; 
-	public int Bullet_damage = 0; 
-	public float Bullet_speed = 1200f; 
-	public int Bullet_penetration = 0; 
-
-	private int penetration_count = 0;
-
+  public bool playerBullet = false; 
+	public float Bullet_hang_time = 1f;
+	public int Bullet_damage = 0;
+	public float Bullet_speed = 1200f;
+	public int Bullet_penetration = 0;
+	int penetration_count = 0;
+	public bool poisounous = false;
+	public bool explosive = false;
+	public bool burning = false;
+	public bool freezing = false;
+	public int bounces = 0;
+	
 	public override void _Ready()
 	{
  
