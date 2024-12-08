@@ -1,12 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnos7k3b76i1b"]
+[gd_scene load_steps=8 format=3 uid="uid://cnos7k3b76i1b"]
 
 [ext_resource type="Script" path="res://Scripts/Player.cs" id="1_i6nyg"]
 [ext_resource type="Script" path="res://Scripts/GunSwap.cs" id="3_e6naj"]
 [ext_resource type="SpriteFrames" uid="uid://nsskugdl7ipd" path="res://Sprites/CharacterAnimations/Player/PlayerSpriteFrames.tres" id="3_ovmeg"]
 [ext_resource type="AudioStream" uid="uid://bdra5h540wgg6" path="res://Sounds/dash.wav" id="4_1ffh5"]
+[ext_resource type="AudioStream" uid="uid://cco0gumqa1mu7" path="res://Sounds/hitHurt.wav" id="5_xt4jc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j00h5"]
-size = Vector2(126, 122)
+size = Vector2(70, 120)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36xaq"]
 bg_color = Color(0.160784, 1, 0.494118, 1)
@@ -16,7 +17,7 @@ collision_layer = 2
 script = ExtResource("1_i6nyg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_j00h5")
 
 [node name="GunSwap" type="Node2D" parent="."]
@@ -29,7 +30,7 @@ wait_time = 0.3
 wait_time = 0.8
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.75, 0.75)
+zoom = Vector2(0.6, 0.6)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -46,7 +47,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="MovementAnimations" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-1.5, -2)
 scale = Vector2(5.13333, 4.6)
 sprite_frames = ExtResource("3_ovmeg")
 autoplay = "default"
@@ -69,6 +69,10 @@ metadata/_aseprite_wizard_source_file_hash_ = "36cfc4756a3b4162a53fc8d496f1564f"
 
 [node name="DashSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_1ffh5")
+volume_db = -1.507
+
+[node name="HurtSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_xt4jc")
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]

@@ -16,13 +16,18 @@ public partial class Player : CharacterBody2D
 	Timer DashTimer;
 	Timer DashCooldown;
 	AnimatedSprite2D moveanims;
+	AudioStreamPlayer2D DashSound;
+	AudioStreamPlayer2D HurtSound;
 	
 	public override void _Ready()
 	{
 		InitHealth();
 		DashTimer = GetNode<Timer>("DashTimer") as Timer;
 		DashCooldown = GetNode<Timer>("DashCooldown") as Timer;
+		DashSound = GetNode<AudioStreamPlayer2D>("DashSound") as AudioStreamPlayer2D;
+		HurtSound = GetNode<AudioStreamPlayer2D>("HurtSound") as AudioStreamPlayer2D;
 		moveanims = GetNode<AnimatedSprite2D>("MovementAnimations") as AnimatedSprite2D;
+		
 	}
 
 	public void GetInput()
@@ -51,6 +56,7 @@ public partial class Player : CharacterBody2D
 			canDash = false;
 			DashTimer.Start();
 			DashCooldown.Start();
+			DashSound.Play();
 		}
 		
 		if(Input.IsActionJustPressed("damageplayerjustbecause")){
@@ -80,6 +86,7 @@ public partial class Player : CharacterBody2D
 	}
 	
 	public void Damage(int amount){
+		HurtSound.Play();
 		health -= amount;
 		if(health <= 0){
 			Die();

@@ -1,11 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://pats3ayxlcon"]
+[gd_scene load_steps=4 format=3 uid="uid://pats3ayxlcon"]
 
 [ext_resource type="Script" path="res://Scripts/Gun.cs" id="1_s0j0t"]
 [ext_resource type="PackedScene" uid="uid://dvblqbgee13op" path="res://Scenes/Bullet.tscn" id="2_7hsuf"]
+[ext_resource type="AudioStream" uid="uid://b5i3ijdqrn8yv" path="res://Sounds/pistolShoot.wav" id="3_0iysg"]
 
 [node name="Pistol" type="Node2D"]
 script = ExtResource("1_s0j0t")
 Bullet_scn = ExtResource("2_7hsuf")
 Bullet_max_spread = 10.0
 Bullet_speed = 1500.0
+Bullets_per_second = 3.0
+Bullet_damage = 5
 Bullet_hang_time = 0.5
+
+[node name="GunSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0iysg")
