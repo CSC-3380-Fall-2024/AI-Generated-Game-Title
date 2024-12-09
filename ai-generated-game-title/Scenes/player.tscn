@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/GunSwap.cs" id="3_e6naj"]
 [ext_resource type="SpriteFrames" uid="uid://nsskugdl7ipd" path="res://Sprites/CharacterAnimations/Player/PlayerSpriteFrames.tres" id="3_ovmeg"]
 [ext_resource type="AudioStream" uid="uid://bdra5h540wgg6" path="res://Sounds/dash.wav" id="4_1ffh5"]
+[ext_resource type="Texture2D" uid="uid://bwmeyw6yk63g1" path="res://Sprites/Common Card Border.png" id="5_acftf"]
 [ext_resource type="AudioStream" uid="uid://cco0gumqa1mu7" path="res://Sounds/hitHurt.wav" id="5_xt4jc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j00h5"]
@@ -73,6 +74,13 @@ volume_db = -1.507
 
 [node name="HurtSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_xt4jc")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
+texture_filter = 1
+position = Vector2(1183, 561)
+texture = ExtResource("5_acftf")
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
