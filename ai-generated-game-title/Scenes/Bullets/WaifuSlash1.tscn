@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgvf0e2vmw34o"]
+
+[ext_resource type="Script" path="res://Scripts/Bullet.cs" id="1_b0m0e"]
+[ext_resource type="Texture2D" uid="uid://dy06s47607pcy" path="res://Sprites/BulletSprites/WaifuSlash1.png" id="2_0kl2q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4i8mg"]
+size = Vector2(115, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tvjc"]
+atlas = ExtResource("2_0kl2q")
+region = Rect2(0, 0, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a63oo"]
+atlas = ExtResource("2_0kl2q")
+region = Rect2(20, 0, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4kug"]
+atlas = ExtResource("2_0kl2q")
+region = Rect2(0, 30, 20, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4rnva"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tvjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a63oo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4kug")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="WaifuSlash" type="Area2D"]
+collision_layer = 8
+collision_mask = 7
+script = ExtResource("1_b0m0e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(51.5, 93)
+shape = SubResource("RectangleShape2D_4i8mg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(48.5, 92.5)
+scale = Vector2(5.85, 7.16667)
+sprite_frames = SubResource("SpriteFrames_4rnva")
+autoplay = "default"
+frame = 2
+frame_progress = 0.908209
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://Sprites/BulletSprites",
+"o_name": "WaifuSlash1",
+"only_visible": false,
+"slice": "",
+"source": "C:/Users/troyw/OneDrive/Pictures/Pixel Art/3380 Game/Bullets/WaifuSlash.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "2806caff0f3f5fa2b8a1c111d1a82729"

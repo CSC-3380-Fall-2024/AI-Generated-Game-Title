@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://hg627d4h2l5p"]
+
+[ext_resource type="Script" path="res://Scripts/Bullet.cs" id="1_f25g7"]
+[ext_resource type="Texture2D" uid="uid://148vnh250x61" path="res://Sprites/BulletSprites/WaifuSlash2.png" id="1_t5shv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccb3u"]
+atlas = ExtResource("1_t5shv")
+region = Rect2(0, 0, 20, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yn1o"]
+atlas = ExtResource("1_t5shv")
+region = Rect2(20, 0, 20, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r37xx"]
+atlas = ExtResource("1_t5shv")
+region = Rect2(40, 0, 20, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krs25"]
+atlas = ExtResource("1_t5shv")
+region = Rect2(0, 70, 20, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qu0nj"]
+atlas = ExtResource("1_t5shv")
+region = Rect2(20, 70, 20, 70)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p1b4o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccb3u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yn1o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r37xx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krs25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qu0nj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0u1u"]
+size = Vector2(54, 379)
+
+[node name="WaifuSlash2" type="Area2D"]
+script = ExtResource("1_f25g7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(26.5, 184)
+rotation = 3.14029
+scale = Vector2(3.63313, 6.25755)
+sprite_frames = SubResource("SpriteFrames_p1b4o")
+autoplay = "default"
+frame = 4
+frame_progress = 0.898403
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://Sprites/BulletSprites",
+"o_name": "WaifuSlash2",
+"only_visible": false,
+"slice": "",
+"source": "C:/Users/troyw/OneDrive/Pictures/Pixel Art/3380 Game/Bullets/WaifuSlash2.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "c5af424131e9fc533820b91d0f4cb7d9"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(38, 187.5)
+shape = SubResource("RectangleShape2D_i0u1u")

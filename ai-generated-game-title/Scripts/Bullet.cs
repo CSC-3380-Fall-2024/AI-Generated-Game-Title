@@ -4,14 +4,18 @@ using System;
 public partial class Bullet : Area2D
 {
 	public bool enemyBullet = false;
-	public bool playerBullet = false; 
-	public float Bullet_hang_time = 1f; 
-	public int Bullet_damage = 0; 
-	public float Bullet_speed = 1200f; 
-	public int Bullet_penetration = 0; 
-
-	private int penetration_count = 0;
-
+  public bool playerBullet = false; 
+	public float Bullet_hang_time = 1f;
+	public int Bullet_damage = 0;
+	public float Bullet_speed = 1200f;
+	public int Bullet_penetration = 0;
+	int penetration_count = 0;
+	public bool poisounous = false;
+	public bool explosive = false;
+	public bool burning = false;
+	public bool freezing = false;
+	public int bounces = 0;
+	
 	public override void _Ready()
 	{
  
@@ -22,7 +26,7 @@ public partial class Bullet : Area2D
 		timer.OneShot = true;
 		timer.Start();
 
-		this.BodyEntered += shootEnemy;
+		this.BodyEntered += Shoot;
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -31,7 +35,7 @@ public partial class Bullet : Area2D
 		GlobalPosition += movement * (float)delta;
 	}
 
-	private void shootEnemy(Node body)
+	private void Shoot(Node body)
 	{
 	   
 		if (enemyBullet && body is Enemy) {
@@ -50,12 +54,11 @@ public partial class Bullet : Area2D
 				numkilled.numofenemieskilled += 1;
 				enemy.QueueFree();
 			}
-		}
-		
-		if (body is Player player)
+		} else if (body is Player player)
 		{
 			player.Damage(Bullet_damage);
-
+		} else {
+			QueueFree();
 		}
 		
 		if (penetration_count >= Bullet_penetration)

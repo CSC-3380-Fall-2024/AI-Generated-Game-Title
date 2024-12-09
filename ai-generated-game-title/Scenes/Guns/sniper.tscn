@@ -1,12 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgv0y6ywdftnx"]
+[gd_scene load_steps=4 format=3 uid="uid://dgv0y6ywdftnx"]
 
 [ext_resource type="Script" path="res://Scripts/Gun.cs" id="1_48yg7"]
-[ext_resource type="PackedScene" uid="uid://dvblqbgee13op" path="res://Scenes/bullet.tscn" id="2_f82eb"]
+[ext_resource type="PackedScene" uid="uid://dvblqbgee13op" path="res://Scenes/Bullet.tscn" id="2_f82eb"]
+[ext_resource type="AudioStream" uid="uid://bluusj76pais7" path="res://Sounds/sniperShoot.wav" id="3_djx7m"]
 
 [node name="Sniper" type="Node2D"]
 script = ExtResource("1_48yg7")
 Bullet_scn = ExtResource("2_f82eb")
-Bullet_speed = 3500.0
-Bullets_per_second = 1.0
+Bullet_speed = 3000.0
+Bullets_per_second = 0.75
 Bullet_damage = 50
-Bullet_penetration = 5
+Bullet_penetration = 3
+
+[node name="GunSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_djx7m")
+volume_db = -7.812

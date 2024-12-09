@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://baqei2b7h65ol"]
+[gd_scene load_steps=9 format=3 uid="uid://baqei2b7h65ol"]
 
 [ext_resource type="TileSet" uid="uid://d2atilibkjmtx" path="res://Textures/Tilesets/StreetTiles.tres" id="1_myw33"]
 [ext_resource type="PackedScene" uid="uid://cnos7k3b76i1b" path="res://Scenes/player.tscn" id="2_75o80"]
+[ext_resource type="PackedScene" uid="uid://d7spmr4re708" path="res://Scenes/Enemies/EvilFrenchDude.tscn" id="3_be1yn"]
+[ext_resource type="PackedScene" uid="uid://cidc7ubf1xgyd" path="res://Scenes/Enemies/Refridgerator.tscn" id="4_wuk67"]
+[ext_resource type="PackedScene" uid="uid://dvwkyvf1ur21k" path="res://Scenes/Enemies/AnimeWaifuBoss.tscn" id="5_6coyr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fqljq"]
 size = Vector2(140, 1580)
@@ -43,3 +46,12 @@ position = Vector2(-254, 625)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2(1342, 8.5)
 shape = SubResource("RectangleShape2D_rt66w")
+
+[node name="EvilFrenchDude" parent="." instance=ExtResource("3_be1yn")]
+position = Vector2(539, -180)
+
+[node name="Refridgerator" parent="." instance=ExtResource("4_wuk67")]
+position = Vector2(527, 122)
+
+[node name="AnimeWaifuBoss" parent="." instance=ExtResource("5_6coyr")]
+position = Vector2(723, -168)

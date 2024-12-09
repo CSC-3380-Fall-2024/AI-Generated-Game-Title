@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8moabjvd4xsc"]
+
+[ext_resource type="Script" path="res://Scripts/Bullet.cs" id="1_rxxf8"]
+[ext_resource type="Texture2D" uid="uid://bqi3lvnbjufb7" path="res://Sprites/BulletSprites/Turkey.png" id="2_pmk8p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4i8mg"]
+size = Vector2(44, 35)
+
+[node name="TurkeyBullet" type="Area2D"]
+collision_layer = 8
+collision_mask = 7
+script = ExtResource("1_rxxf8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 11.5)
+scale = Vector2(2.6, 2.15)
+texture = ExtResource("2_pmk8p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(18, 12.5)
+shape = SubResource("RectangleShape2D_4i8mg")
