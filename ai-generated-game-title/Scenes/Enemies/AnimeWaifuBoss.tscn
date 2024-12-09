@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://dvwkyvf1ur21k"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy.cs" id="1_q5a66"]
+[ext_resource type="Texture2D" uid="uid://d8xdwtfc4u5y" path="res://Sprites/CharacterAnimations/AnimeWaifuBoss/WaifuIdle.png" id="1_vopot"]
+[ext_resource type="PackedScene" uid="uid://bgvf0e2vmw34o" path="res://Scenes/Bullets/WaifuSlash1.tscn" id="2_mptbt"]
+[ext_resource type="PackedScene" uid="uid://hg627d4h2l5p" path="res://Scenes/Bullets/WaifuSlash2.tscn" id="3_wsg5h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xqde"]
+atlas = ExtResource("1_vopot")
+region = Rect2(0, 0, 25, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bval"]
+atlas = ExtResource("1_vopot")
+region = Rect2(25, 0, 25, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o2a70"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xqde")
+}, {
+"duration": 8.0,
+"texture": SubResource("AtlasTexture_6bval")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uo51b"]
+size = Vector2(121, 170)
+
+[node name="AnimeWaifuBoss" type="CharacterBody2D"]
+script = ExtResource("1_q5a66")
+Bullet_scn = Array[PackedScene]([ExtResource("2_mptbt"), ExtResource("3_wsg5h")])
+numofbullettypes = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(48.25, 70.75)
+scale = Vector2(4.86, 5.04286)
+sprite_frames = SubResource("SpriteFrames_o2a70")
+autoplay = "default"
+frame_progress = 0.414285
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://Sprites/CharacterAnimations/AnimeWaifuBoss",
+"o_name": "WaifuIdle",
+"only_visible": false,
+"slice": "",
+"source": "C:/Users/troyw/OneDrive/Pictures/Pixel Art/3380 Game/CharacterAnimations/SwordWaifuBoss/SwordWaifuIdle.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "11ea90a366a46754c58ddc2fc2f56d7d"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(50.5, 75)
+shape = SubResource("RectangleShape2D_uo51b")
