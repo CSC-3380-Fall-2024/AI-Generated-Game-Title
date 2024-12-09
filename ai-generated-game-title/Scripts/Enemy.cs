@@ -6,14 +6,17 @@ public partial class Enemy : CharacterBody2D
 	Player Player;
 	[Export] float speed = 150f;
 	[Export] public int health = 10;
-	[Export] public PackedScene Bullet_scn;
+	[Export] public PackedScene[] Bullet_scn;
+	[Export] public int numofbullettypes = 1;
 
 	[Export] public float ShootingInterval = 1.5f; // seconds
 	private float timeSinceLastShot = 0f;
+	Random rnd;
 
 	public override void _Ready()
 	{
 		Player = (Player)this.GetParent().GetNode("Player");
+		rnd = new Random();
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -41,8 +44,8 @@ public partial class Enemy : CharacterBody2D
 	{
 		if (Bullet_scn != null && Player != null)
 		{
-	
-			Bullet bullet = (Bullet)Bullet_scn.Instantiate();
+			int bulletnum = rnd.Next(numofbullettypes);
+			Bullet bullet = (Bullet)Bullet_scn[bulletnum].Instantiate();
 			GetParent().AddChild(bullet);
 			bullet.GlobalPosition = GlobalPosition;
 			bullet.GlobalRotation = (Player.GlobalPosition - GlobalPosition).Angle();
