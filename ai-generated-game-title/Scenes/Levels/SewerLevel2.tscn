@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://2hgt3a28l7c0"]
+[gd_scene load_steps=5 format=3 uid="uid://2hgt3a28l7c0"]
 
 [ext_resource type="TileSet" uid="uid://daf0jjmeinh5p" path="res://Textures/Tilesets/SewerTiles.tres" id="1_1iw13"]
 [ext_resource type="PackedScene" uid="uid://cnos7k3b76i1b" path="res://Scenes/player.tscn" id="2_7y7j5"]
 [ext_resource type="PackedScene" uid="uid://bl8lxkquucv7k" path="res://Scenes/spawner.tscn" id="3_m5xij"]
+[ext_resource type="Script" path="res://Scripts/KillstoNextLevel.cs" id="4_yj30i"]
 
 [node name="SewerLevel2" type="Node2D"]
 
@@ -16,3 +17,13 @@ position = Vector2(-23, 352)
 
 [node name="Spawner" parent="." instance=ExtResource("3_m5xij")]
 position = Vector2(925, 99)
+
+[node name="KillsToNextLevel" type="Node" parent="."]
+script = ExtResource("4_yj30i")
+killstoNextLevel = 10
+
+[node name="Spawner2" parent="." instance=ExtResource("3_m5xij")]
+position = Vector2(886, -121)
+
+[node name="Spawner3" parent="." instance=ExtResource("3_m5xij")]
+position = Vector2(884, 405)

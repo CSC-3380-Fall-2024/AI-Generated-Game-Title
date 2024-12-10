@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ueal1qmv42q2"]
+[gd_scene load_steps=5 format=3 uid="uid://ueal1qmv42q2"]
 
 [ext_resource type="TileSet" uid="uid://03tuesgdvgqd" path="res://Textures/Tilesets/DesertTiles.tres" id="1_gflmx"]
 [ext_resource type="PackedScene" uid="uid://cnos7k3b76i1b" path="res://Scenes/player.tscn" id="2_vauxo"]
+[ext_resource type="Script" path="res://Scripts/KillstoNextLevel.cs" id="3_3soja"]
+[ext_resource type="PackedScene" uid="uid://bl8lxkquucv7k" path="res://Scenes/spawner.tscn" id="4_v4llv"]
 
 [node name="DesertLevel2" type="Node2D"]
 
@@ -12,3 +14,13 @@ layer_0/tile_data = PackedInt32Array(0, 196608, 7, 65536, 196608, 7, 131072, 196
 
 [node name="Player" parent="." instance=ExtResource("2_vauxo")]
 position = Vector2(126, 172)
+
+[node name="KillsToNextLevel" type="Node" parent="."]
+script = ExtResource("3_3soja")
+killstoNextLevel = 10
+
+[node name="Spawner" parent="." instance=ExtResource("4_v4llv")]
+position = Vector2(86, 718)
+
+[node name="Spawner2" parent="." instance=ExtResource("4_v4llv")]
+position = Vector2(1174, 725)

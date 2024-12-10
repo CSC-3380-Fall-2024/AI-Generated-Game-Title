@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6b2yunihqir8"]
+[gd_scene load_steps=18 format=3 uid="uid://b6b2yunihqir8"]
 
 [ext_resource type="Texture2D" uid="uid://bjjj2gq3rtpoe" path="res://Textures/Grass 1.png" id="1_cj1qr"]
 [ext_resource type="Texture2D" uid="uid://d4f6ckg8r52yv" path="res://Textures/icon.svg" id="2_uyt1j"]
@@ -7,6 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://bwcxmufdsxm1l" path="res://Scenes/LevelPortal.tscn" id="5_kmjok"]
 [ext_resource type="Script" path="res://Scripts/NumofEnemiesKilled.cs" id="6_dffyp"]
 [ext_resource type="PackedScene" uid="uid://d1go4syut2pyn" path="res://Scenes/Enemies/TestEnemyAnimated.tscn" id="6_dr8kf"]
+[ext_resource type="PackedScene" uid="uid://cidc7ubf1xgyd" path="res://Scenes/Enemies/Refridgerator.tscn" id="6_muw6c"]
+[ext_resource type="PackedScene" uid="uid://dvwkyvf1ur21k" path="res://Scenes/Enemies/AnimeWaifuBoss.tscn" id="7_656kh"]
+[ext_resource type="PackedScene" uid="uid://d7spmr4re708" path="res://Scenes/Enemies/EvilFrenchDude.tscn" id="8_g0un8"]
+[ext_resource type="Script" path="res://Scripts/KillstoNextLevel.cs" id="10_po54w"]
+[ext_resource type="PackedScene" uid="uid://baqei2b7h65ol" path="res://Scenes/Levels/StreetLevel.tscn" id="11_hh6ib"]
+[ext_resource type="PackedScene" uid="uid://bij1efl6piy31" path="res://Scenes/Levels/SewerLevel1.tscn" id="12_kr4x2"]
+[ext_resource type="PackedScene" uid="uid://2hgt3a28l7c0" path="res://Scenes/Levels/SewerLevel2.tscn" id="13_cq1mh"]
+[ext_resource type="PackedScene" uid="uid://dwmwuv5738aeh" path="res://Scenes/Levels/DesertLevel1.tscn" id="14_iuggs"]
+[ext_resource type="PackedScene" uid="uid://ueal1qmv42q2" path="res://Scenes/Levels/DesertLevel2.tscn" id="15_01f7f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_060ry"]
 size = Vector2(69, 477)
@@ -86,19 +95,27 @@ position = Vector2(641, 360)
 
 [node name="Spawner2" parent="ActualGame" instance=ExtResource("4_dafna")]
 position = Vector2(1280, -3)
+enemy_scn = Array[PackedScene]([ExtResource("6_dr8kf"), ExtResource("6_muw6c"), ExtResource("7_656kh"), ExtResource("8_g0un8")])
 
 [node name="Spawner3" parent="ActualGame" instance=ExtResource("4_dafna")]
 position = Vector2(-4, 724)
+enemy_scn = null
 
 [node name="Spawner4" parent="ActualGame" instance=ExtResource("4_dafna")]
 position = Vector2(1281, 722)
+enemy_scn = null
 
 [node name="LevelPortal" parent="ActualGame" instance=ExtResource("5_kmjok")]
 position = Vector2(441, 257)
 
 [node name="CharacterBody2D" parent="ActualGame" instance=ExtResource("6_dr8kf")]
 
+[node name="KillsToNextLevel" type="Node" parent="ActualGame"]
+script = ExtResource("10_po54w")
+killstoNextLevel = 7
+
 [node name="NumofEnemiesKilled" type="Node" parent="."]
 script = ExtResource("6_dffyp")
+levels = Array[PackedScene]([ExtResource("11_hh6ib"), ExtResource("12_kr4x2"), ExtResource("13_cq1mh"), ExtResource("14_iuggs"), ExtResource("15_01f7f")])
 
 [node name="GlobalVar2" type="Node" parent="."]

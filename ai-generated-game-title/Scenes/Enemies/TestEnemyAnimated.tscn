@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cnmj0mq8fs6m8" path="res://Sprites/CharacterAnimations/EvilTwitterBird/TwitterBirdIdle.png" id="2_d3ngu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmm7g"]
-size = Vector2(124, 123)
+size = Vector2(89, 88.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_31gvu"]
 atlas = ExtResource("2_d3ngu")
@@ -36,12 +36,13 @@ script = ExtResource("1_kr4qh")
 Bullet_scn = ExtResource("2_5r2t8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(17.5, 17.25)
 shape = SubResource("RectangleShape2D_nmm7g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-1.5, -4)
-scale = Vector2(7.93333, 7.33333)
+position = Vector2(18.5, 13.5)
+scale = Vector2(5.26666, 5)
 sprite_frames = SubResource("SpriteFrames_hvr4n")
 autoplay = "default"
 metadata/_aseprite_wizard_interface_config_ = {
