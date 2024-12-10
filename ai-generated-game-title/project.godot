@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://Textures/icon.svg"
 
+[autoload]
+
+Global="*res://Global.cs"
+
 [display]
 
 window/size/viewport_width=1280
@@ -87,3 +91,7 @@ swap_gun={
 [physics]
 
 common/physics_ticks_per_second=120
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.162066, 0.162066, 0.162066, 1)

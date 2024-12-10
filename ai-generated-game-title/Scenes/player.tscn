@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://cco0gumqa1mu7" path="res://Sounds/hitHurt.wav" id="5_xt4jc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j00h5"]
-size = Vector2(70, 120)
+size = Vector2(70, 100)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36xaq"]
 bg_color = Color(0.160784, 1, 0.494118, 1)
@@ -18,10 +18,11 @@ size = Vector2(66, 19)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
+collision_mask = 17
 script = ExtResource("1_i6nyg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_j00h5")
 
 [node name="GunSwap" type="Node2D" parent="."]
@@ -53,10 +54,7 @@ metadata/_edit_use_anchors_ = true
 texture_filter = 1
 scale = Vector2(5.13333, 4.6)
 sprite_frames = ExtResource("3_ovmeg")
-animation = &"left"
 autoplay = "default"
-frame = 1
-frame_progress = 0.768462
 metadata/_aseprite_wizard_interface_config_ = {
 "output_section": true,
 "pending_changes": {}

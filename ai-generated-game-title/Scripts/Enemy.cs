@@ -9,7 +9,7 @@ public partial class Enemy : CharacterBody2D
 	[Export] public int health = 10; 
 	[Export] public PackedScene Bullet_scn; 
 	[Export] public float ShootingInterval = 1.5f; 
-	[Export] private float ChaseRange = 500f; 
+	[Export] private float ChaseRange = 1000f; 
 	[Export] private float AttackRange = 300f;
 	
 	private float timeSinceLastShot = 0f; 
@@ -27,6 +27,8 @@ public partial class Enemy : CharacterBody2D
 
 			if (distanceToPlayer <= ChaseRange)
 			{
+				HandleAttack(delta);
+				
 				if (distanceToPlayer <= AttackRange)
 				{
 					// Attack player if within attack range
