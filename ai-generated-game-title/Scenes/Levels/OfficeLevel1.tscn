@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba78p6hird6nk"]
+
+[ext_resource type="TileSet" uid="uid://ckyq1btbxb0os" path="res://Textures/Tilesets/OfficeTiles.tres" id="1_8stuc"]
+
+[node name="OfficeLevel1" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_8stuc")
+format = 2
