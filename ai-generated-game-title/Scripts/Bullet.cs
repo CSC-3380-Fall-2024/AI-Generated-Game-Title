@@ -50,9 +50,15 @@ public partial class Bullet : Area2D
 			enemy.health -= Bullet_damage;
 			if (enemy.health <= 0)
 			{
-				NumofEnemiesKilled numkilled = (NumofEnemiesKilled)GetTree().Root.GetNode("Game").GetNode("NumofEnemiesKilled"); 
+				NumofEnemiesKilled numkilled = (NumofEnemiesKilled)GetTree().Root.GetNode("Game").GetNode("NumofEnemiesKilled");
+				KillstoNextLevel killsneeded = (KillstoNextLevel)GetTree().Root.GetNode("Game").FindChild("KillsToNextLevel");
 				numkilled.numofenemieskilled += 1;
 				enemy.QueueFree();
+				if (numkilled.numofenemieskilled >= killsneeded.killstoNextLevel){
+					numkilled.numofenemieskilled = 0;
+					numkilled.CallDeferred("LoadLevel");
+				}
+				
 			}
 		} else if (body is Player player)
 		{

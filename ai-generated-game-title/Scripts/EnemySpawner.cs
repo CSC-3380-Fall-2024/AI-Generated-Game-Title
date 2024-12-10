@@ -3,8 +3,10 @@ using System;
 
 public partial class EnemySpawner: Node2D {
 	
-	[Export] PackedScene enemy_scn;
+	[Export] PackedScene[] enemy_scn;
 	[Export] float eps = 1f;
+	[Export] public int numofenemytypes = 1;
+	Random rnd;
 
 	float spawn_rate;
 
@@ -12,6 +14,7 @@ public partial class EnemySpawner: Node2D {
 
 	public override void _Ready() {
 		spawn_rate = 1 / eps;
+		rnd = new Random();
 	}
 
 	public override void _PhysicsProcess(double delta) {
@@ -24,9 +27,9 @@ public partial class EnemySpawner: Node2D {
 	}
 
 	private void Spawn() {
-		RandomNumberGenerator rng = new RandomNumberGenerator();
+		int index = rnd.Next(numofenemytypes);
 		Vector2 location = this.GlobalPosition;
-		Enemy enemy = (Enemy)enemy_scn.Instantiate();
+		Enemy enemy = (Enemy)enemy_scn[index].Instantiate();
 		enemy.GlobalPosition = location;
 		this.GetParent().AddChild(enemy);
 	}

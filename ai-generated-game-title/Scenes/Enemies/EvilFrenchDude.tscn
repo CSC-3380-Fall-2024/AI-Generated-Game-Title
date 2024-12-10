@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://d7spmr4re708"]
+[gd_scene load_steps=8 format=3 uid="uid://d7spmr4re708"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.cs" id="1_khyuo"]
+[ext_resource type="PackedScene" uid="uid://dxvdpjm4qunrc" path="res://Scenes/Bullets/BreadBullet.tscn" id="2_6pu7o"]
 [ext_resource type="Texture2D" uid="uid://cg1sni20nnwly" path="res://Sprites/CharacterAnimations/EvilFrenchDude/FrenchDudeIdle.png" id="2_aufh5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o0f31"]
@@ -32,6 +33,7 @@ size = Vector2(82, 116)
 collision_layer = 4
 collision_mask = 21
 script = ExtResource("1_khyuo")
+Bullet_scn = ExtResource("2_6pu7o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
