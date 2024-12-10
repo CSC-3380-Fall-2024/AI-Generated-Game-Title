@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxj53w6tc22t5"]
+[gd_scene load_steps=3 format=3 uid="uid://cxj53w6tc22t5"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.cs" id="1_51h72"]
+[ext_resource type="FontFile" uid="uid://cj4c6jgfayo06" path="res://Textures/Silkscreen-Bold.ttf" id="2_25qeo"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -19,9 +20,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -202.0
-offset_top = 25.5
+offset_top = 55.5
 offset_right = 202.0
-offset_bottom = 168.5
+offset_bottom = 198.5
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -30,11 +31,13 @@ metadata/_edit_group_ = true
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_25qeo")
 text = "Start"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_25qeo")
 text = "Quit"
 
 [node name="Label" type="Label" parent="."]
@@ -42,14 +45,15 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -95.5
-offset_top = 131.0
-offset_right = 93.5
-offset_bottom = 154.0
+offset_left = -522.5
+offset_top = 161.0
+offset_right = 520.5
+offset_bottom = 238.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_25qeo")
 theme_override_font_sizes/font_size = 60
 text = "AI Generated Game Title"
 
-[connection signal="button_up" from="VBoxContainer/StartButton" to="." method="_on_start_button_button_up"]
 [connection signal="button_up" from="VBoxContainer/StartButton" to="." method="_on_menu_button_button_up"]
+[connection signal="button_up" from="VBoxContainer/StartButton" to="." method="_on_start_button_button_up"]
 [connection signal="button_up" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_button_up"]

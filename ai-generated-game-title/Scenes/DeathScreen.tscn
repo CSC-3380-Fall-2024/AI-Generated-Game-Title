@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://btoviui206h26"]
+[gd_scene load_steps=4 format=3 uid="uid://btoviui206h26"]
 
 [ext_resource type="Script" path="res://Scripts/DeathScreen.cs" id="1_anrqx"]
+[ext_resource type="FontFile" uid="uid://cj4c6jgfayo06" path="res://Textures/Silkscreen-Bold.ttf" id="2_a3uia"]
+[ext_resource type="FontFile" uid="uid://mujaj5kup1xn" path="res://Textures/Silkscreen-Regular.ttf" id="3_n4mjd"]
 
 [node name="DeathScreen" type="Control"]
 layout_mode = 3
@@ -16,11 +18,12 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -188.5
-offset_top = 123.0
-offset_right = 188.5
-offset_bottom = 233.0
+offset_left = -250.0
+offset_top = 153.0
+offset_right = 250.0
+offset_bottom = 263.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_a3uia")
 theme_override_font_sizes/font_size = 80
 text = "YOU DIED"
 
@@ -29,11 +32,12 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -386.0
-offset_top = 269.0
-offset_right = 386.0
-offset_bottom = 324.0
+offset_left = -537.5
+offset_top = 299.0
+offset_right = 537.5
+offset_bottom = 354.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_n4mjd")
 theme_override_font_sizes/font_size = 40
 text = "The evil AI is training on your dead body"
 
@@ -45,9 +49,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -202.0
-offset_top = 25.5
+offset_top = 55.5
 offset_right = 202.0
-offset_bottom = 168.5
+offset_bottom = 198.5
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -56,11 +60,13 @@ metadata/_edit_group_ = true
 [node name="MenuButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_a3uia")
 text = "Main Menu"
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_a3uia")
 text = "Quit"
 
 [connection signal="button_up" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_button_up"]

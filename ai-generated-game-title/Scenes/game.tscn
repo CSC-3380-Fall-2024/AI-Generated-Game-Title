@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bl8lxkquucv7k" path="res://Scenes/spawner.tscn" id="4_dafna"]
 [ext_resource type="PackedScene" uid="uid://bwcxmufdsxm1l" path="res://Scenes/LevelPortal.tscn" id="5_kmjok"]
 [ext_resource type="Script" path="res://Scripts/NumofEnemiesKilled.cs" id="6_dffyp"]
-[ext_resource type="PackedScene" uid="uid://d1go4syut2pyn" path="res://Scenes/TestEnemyAnimated.tscn" id="6_dr8kf"]
+[ext_resource type="PackedScene" uid="uid://d1go4syut2pyn" path="res://Scenes/Enemies/TestEnemyAnimated.tscn" id="6_dr8kf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_060ry"]
 size = Vector2(69, 477)

@@ -1,9 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dvwkyvf1ur21k"]
+[gd_scene load_steps=7 format=3 uid="uid://dvwkyvf1ur21k"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.cs" id="1_q5a66"]
 [ext_resource type="Texture2D" uid="uid://d8xdwtfc4u5y" path="res://Sprites/CharacterAnimations/AnimeWaifuBoss/WaifuIdle.png" id="1_vopot"]
-[ext_resource type="PackedScene" uid="uid://bgvf0e2vmw34o" path="res://Scenes/Bullets/WaifuSlash1.tscn" id="2_mptbt"]
-[ext_resource type="PackedScene" uid="uid://hg627d4h2l5p" path="res://Scenes/Bullets/WaifuSlash2.tscn" id="3_wsg5h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5xqde"]
 atlas = ExtResource("1_vopot")
@@ -31,9 +29,9 @@ animations = [{
 size = Vector2(121, 170)
 
 [node name="AnimeWaifuBoss" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 21
 script = ExtResource("1_q5a66")
-Bullet_scn = Array[PackedScene]([ExtResource("2_mptbt"), ExtResource("3_wsg5h")])
-numofbullettypes = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
