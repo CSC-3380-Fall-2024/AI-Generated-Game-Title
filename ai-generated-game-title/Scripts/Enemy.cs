@@ -3,56 +3,80 @@ using System;
 
 public partial class Enemy : CharacterBody2D
 {
-	Player Player;
-	[Export] float speed = 150f;
-	[Export] public int health = 10;
-	[Export] public PackedScene[] Bullet_scn;
-	[Export] public int numofbullettypes = 1;
-
-	[Export] public float ShootingInterval = 1.5f; // seconds
-	private float timeSinceLastShot = 0f;
-	Random rnd;
+	private Player Player;
+	
+	[Export] private float speed = 150f; 
+	[Export] public int health = 10; 
+	[Export] public PackedScene Bullet_scn; 
+	[Export] public float ShootingInterval = 1.5f; 
+	[Export] private float ChaseRange = 500f; 
+	[Export] private float AttackRange = 300f;
+	
+	private float timeSinceLastShot = 0f; 
 
 	public override void _Ready()
 	{
-		Player = (Player)this.GetParent().GetNode("Player");
-		rnd = new Random();
+		Player = GetParent().GetNode<Player>("Player");
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
 		if (Player != null)
 		{
-			Vector2 direction = (Player.GlobalPosition - GlobalPosition).Normalized();
-			Velocity = direction * speed;
-			
-			timeSinceLastShot += (float)delta;
-			if (timeSinceLastShot >= ShootingInterval)
+			float distanceToPlayer = GlobalPosition.DistanceTo(Player.GlobalPosition);
+
+			if (distanceToPlayer <= ChaseRange)
 			{
-				ShootAtPlayer();
-				timeSinceLastShot = 0f;
+				if (distanceToPlayer <= AttackRange)
+				{
+					// Attack player if within attack range
+					HandleAttack(delta);
+				}
+				else
+				{
+					// Chase the player if within chase range
+					HandleChase(delta);
+				}
+			}
+			else
+			{
+				// Stop moving if the player is out of range
+				Velocity = Vector2.Zero;
 			}
 		}
-		else
-		{
-			Velocity = Vector2.Zero;
-		}
+
+		// Apply movement
 		MoveAndSlide();
 	}
 
-	private void ShootAtPlayer()
+	private void HandleChase(double delta)
 	{
-		if (Bullet_scn != null && Player != null)
+		Vector2 direction = (Player.GlobalPosition - GlobalPosition).Normalized();
+		Velocity = direction * speed;
+	}
+
+	private void HandleAttack(double delta)
+	{
+		Velocity = Vector2.Zero;
+		timeSinceLastShot += (float)delta;
+		if (timeSinceLastShot >= ShootingInterval)
 		{
-			int bulletnum = rnd.Next(numofbullettypes);
-			Bullet bullet = (Bullet)Bullet_scn[bulletnum].Instantiate();
-			GetParent().AddChild(bullet);
-			bullet.GlobalPosition = GlobalPosition;
-			bullet.GlobalRotation = (Player.GlobalPosition - GlobalPosition).Angle();
-			bullet.enemyBullet = true;
-			bullet.Bullet_damage = 1; 
-			bullet.Bullet_speed = 600f; 
-			bullet.Bullet_penetration = 0; 
+			ShootAtPlayer();
+			timeSinceLastShot = 0f;
 		}
 	}
+	 private void ShootAtPlayer()
+	{
+	if (Bullet_scn != null)
+	{
+		Bullet bullet = (Bullet)Bullet_scn.Instantiate();
+		GetParent().AddChild(bullet);
+		bullet.GlobalPosition = GlobalPosition;
+		bullet.GlobalRotation = (Player.GlobalPosition - GlobalPosition).Angle();
+		bullet.enemyBullet = true;
+		bullet.Bullet_damage = 1; // Damage dealt by the bullet
+		bullet.Bullet_speed = 600f; // Speed of the bullet
+		bullet.Bullet_penetration = 0; // Number of penetrations
+	}
+  }
 }

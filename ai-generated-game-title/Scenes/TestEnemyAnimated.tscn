@@ -36,7 +36,7 @@ animations = [{
 collision_layer = 4
 collision_mask = 5
 script = ExtResource("1_kr4qh")
-Bullet_scn = Array[PackedScene]([ExtResource("2_5r2t8")])
+Bullet_scn = ExtResource("2_5r2t8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_nmm7g")
