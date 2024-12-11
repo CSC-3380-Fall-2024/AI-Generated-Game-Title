@@ -27,14 +27,14 @@ public partial class GlobalVariables : Node
 		GD.Print("trying to actually load level");
 		levelsbeaten++;
 		currentlevel.QueueFree();
-		if (levelsbeaten < 1){
+		if (levelsbeaten < 10){
 			int index = rnd.Next(6);
 		
 			var instance = (Node2D)levels[index].Instantiate();
 			this.currentlevel = (Node2D)instance;
 			CallDeferred("addLevelScene", (Node2D)instance);
 		}
-		else if (levelsbeaten == 1){
+		else if (levelsbeaten == 10){
 			var scene = (PackedScene)GD.Load("res://Scenes/Levels/BossBattle.tscn");
 			var instance = (Node2D)scene.Instantiate();
 			this.currentlevel = (Node2D)instance;
