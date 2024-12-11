@@ -1,10 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://b6b2yunihqir8"]
+[gd_scene load_steps=17 format=3 uid="uid://b6b2yunihqir8"]
 
 [ext_resource type="Texture2D" uid="uid://bjjj2gq3rtpoe" path="res://Textures/Grass 1.png" id="1_cj1qr"]
 [ext_resource type="Texture2D" uid="uid://d4f6ckg8r52yv" path="res://Textures/icon.svg" id="2_uyt1j"]
 [ext_resource type="PackedScene" uid="uid://cnos7k3b76i1b" path="res://Scenes/player.tscn" id="3_0b5wt"]
 [ext_resource type="PackedScene" uid="uid://bl8lxkquucv7k" path="res://Scenes/spawner.tscn" id="4_dafna"]
-[ext_resource type="PackedScene" uid="uid://bwcxmufdsxm1l" path="res://Scenes/LevelPortal.tscn" id="5_kmjok"]
 [ext_resource type="Script" path="res://Scripts/NumofEnemiesKilled.cs" id="6_dffyp"]
 [ext_resource type="PackedScene" uid="uid://d1go4syut2pyn" path="res://Scenes/Enemies/TestEnemyAnimated.tscn" id="6_dr8kf"]
 [ext_resource type="PackedScene" uid="uid://cidc7ubf1xgyd" path="res://Scenes/Enemies/Refridgerator.tscn" id="6_muw6c"]
@@ -105,14 +104,19 @@ enemy_scn = Array[PackedScene]([ExtResource("6_dr8kf"), ExtResource("6_muw6c"), 
 position = Vector2(-53, 755)
 enemy_scn = Array[PackedScene]([ExtResource("6_dr8kf"), ExtResource("6_muw6c"), ExtResource("7_656kh"), ExtResource("8_g0un8")])
 
-[node name="LevelPortal" parent="ActualGame" instance=ExtResource("5_kmjok")]
-position = Vector2(441, 257)
-
 [node name="CharacterBody2D" parent="ActualGame" instance=ExtResource("6_dr8kf")]
 
 [node name="KillsToNextLevel" type="Node" parent="ActualGame"]
 script = ExtResource("10_po54w")
 killstoNextLevel = 7
+
+[node name="TextEdit" type="TextEdit" parent="ActualGame"]
+offset_left = 335.0
+offset_top = 131.0
+offset_right = 861.0
+offset_bottom = 295.0
+text = "Welcome to the game! WASD to move, click to shoot in that direction, R to switch guns. Keep killing enemies and last as long as you can! Kill 7 enemies to complete the tutorial and proceed to the next level."
+wrap_mode = 1
 
 [node name="NumofEnemiesKilled" type="Node" parent="."]
 script = ExtResource("6_dffyp")
