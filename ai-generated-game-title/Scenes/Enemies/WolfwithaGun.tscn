@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://7p0f06uy0yaq"]
+
+[ext_resource type="Texture2D" uid="uid://ctr1bamrgkch7" path="res://Sprites/CharacterAnimations/FurrybaitBoss/FurryBossMoving.png" id="1_ce4wq"]
+[ext_resource type="Script" path="res://Scripts/Enemy.cs" id="1_ms4ul"]
+[ext_resource type="PackedScene" uid="uid://dvpxdnjq1wcb8" path="res://Scenes/Bullets/FurrybaitBossBullet.tscn" id="2_sdmvq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2ym6"]
+atlas = ExtResource("1_ce4wq")
+region = Rect2(0, 0, 25, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6aj8"]
+atlas = ExtResource("1_ce4wq")
+region = Rect2(25, 0, 25, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rthgs"]
+atlas = ExtResource("1_ce4wq")
+region = Rect2(0, 50, 25, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40ngw"]
+atlas = ExtResource("1_ce4wq")
+region = Rect2(25, 50, 25, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ivign"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2ym6")
+}, {
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_g6aj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rthgs")
+}, {
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_40ngw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_he6bb"]
+size = Vector2(60, 107)
+
+[node name="WolfwithaGun" type="CharacterBody2D"]
+script = ExtResource("1_ms4ul")
+Bullet_scn = ExtResource("2_sdmvq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(21.75, 32)
+scale = Vector2(2.74, 2.28)
+sprite_frames = SubResource("SpriteFrames_ivign")
+autoplay = "default"
+frame = 1
+frame_progress = 0.390448
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "res://Sprites/CharacterAnimations/FurrybaitBoss",
+"o_name": "FurryBossMoving",
+"only_visible": false,
+"slice": "",
+"source": "C:/Users/troyw/OneDrive/Pictures/Pixel Art/3380 Game/CharacterAnimations/FurrybaitBoss/FurrybaitBossMoving.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "553c7cd8a1bbd5b2d388a2ff2bade696"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(25, 35.5)
+shape = SubResource("RectangleShape2D_he6bb")

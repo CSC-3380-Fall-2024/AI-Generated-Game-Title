@@ -1,13 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://bl8lxkquucv7k"]
+[gd_scene load_steps=7 format=3 uid="uid://bl8lxkquucv7k"]
 
 [ext_resource type="Script" path="res://Scripts/EnemySpawner.cs" id="1_rjlui"]
 [ext_resource type="PackedScene" uid="uid://d1go4syut2pyn" path="res://Scenes/Enemies/TestEnemyAnimated.tscn" id="2_e6eox"]
 [ext_resource type="PackedScene" uid="uid://dvwkyvf1ur21k" path="res://Scenes/Enemies/AnimeWaifuBoss.tscn" id="3_popjo"]
 [ext_resource type="PackedScene" uid="uid://d7spmr4re708" path="res://Scenes/Enemies/EvilFrenchDude.tscn" id="4_x8jju"]
 [ext_resource type="PackedScene" uid="uid://cidc7ubf1xgyd" path="res://Scenes/Enemies/Refridgerator.tscn" id="5_j40ce"]
+[ext_resource type="PackedScene" uid="uid://7p0f06uy0yaq" path="res://Scenes/Enemies/WolfwithaGun.tscn" id="6_dapbt"]
 
 [node name="Spawner" type="Node2D"]
 script = ExtResource("1_rjlui")
-enemy_scn = Array[PackedScene]([ExtResource("2_e6eox"), ExtResource("3_popjo"), ExtResource("4_x8jju"), ExtResource("5_j40ce")])
+enemy_scn = Array[PackedScene]([ExtResource("2_e6eox"), ExtResource("3_popjo"), ExtResource("4_x8jju"), ExtResource("5_j40ce"), ExtResource("6_dapbt")])
 eps = 0.25
-numofenemytypes = 3
+numofenemytypes = 5
