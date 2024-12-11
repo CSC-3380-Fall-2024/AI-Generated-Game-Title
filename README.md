@@ -4,6 +4,7 @@ To run AI Generated Game Title:
 2. Install .NET for your platform.
 3. Download the zip at https://github.com/CSC-3380-Fall-2024/AI-Generated-Game-Title
 4. Run the executable file after extracting (Windows only)
+5. You may have to let the executable bypass your firewall.
 
 To open the project in Godot:
 
