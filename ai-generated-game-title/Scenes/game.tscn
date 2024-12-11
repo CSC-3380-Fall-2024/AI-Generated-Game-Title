@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://b6b2yunihqir8"]
+[gd_scene load_steps=16 format=3 uid="uid://b6b2yunihqir8"]
 
 [ext_resource type="TileSet" uid="uid://d2atilibkjmtx" path="res://Textures/Tilesets/StreetTiles.tres" id="1_xlxsm"]
 [ext_resource type="PackedScene" uid="uid://cnos7k3b76i1b" path="res://Scenes/player.tscn" id="3_7op2t"]
 [ext_resource type="PackedScene" uid="uid://bl8lxkquucv7k" path="res://Scenes/spawner.tscn" id="4_jyb5o"]
 [ext_resource type="Script" path="res://Scripts/KillstoNextLevel.cs" id="10_cv2e8"]
+[ext_resource type="PackedScene" uid="uid://ba78p6hird6nk" path="res://Scenes/Levels/OfficeLevel1.tscn" id="11_b1sck"]
 [ext_resource type="Script" path="res://Scripts/GlobalVariables.cs" id="11_wx0fd"]
 [ext_resource type="PackedScene" uid="uid://baqei2b7h65ol" path="res://Scenes/Levels/StreetLevel.tscn" id="12_gohck"]
 [ext_resource type="PackedScene" uid="uid://bij1efl6piy31" path="res://Scenes/Levels/SewerLevel1.tscn" id="13_cyung"]
@@ -86,4 +87,4 @@ killstoNextLevel = 15
 
 [node name="GlobalVariables" type="Node" parent="."]
 script = ExtResource("11_wx0fd")
-levels = Array[PackedScene]([ExtResource("12_gohck"), ExtResource("13_cyung"), ExtResource("14_b10p5"), ExtResource("15_caegh"), ExtResource("16_xvo6n")])
+levels = Array[PackedScene]([ExtResource("12_gohck"), ExtResource("13_cyung"), ExtResource("14_b10p5"), ExtResource("15_caegh"), ExtResource("16_xvo6n"), ExtResource("11_b1sck")])
