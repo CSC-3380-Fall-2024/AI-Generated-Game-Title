@@ -25,7 +25,7 @@ killstoNextLevel = 5
 
 [node name="AnimeWaifuBoss" parent="." instance=ExtResource("4_2u4dg")]
 position = Vector2(109, 28)
-health = 300
+health = 200
 
 [node name="AnimatedSprite2D" parent="AnimeWaifuBoss" index="0"]
 position = Vector2(95.75, -8.00002)

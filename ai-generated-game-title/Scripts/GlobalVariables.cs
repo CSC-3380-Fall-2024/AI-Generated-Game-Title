@@ -34,14 +34,24 @@ public partial class GlobalVariables : Node
 			this.currentlevel = (Node2D)instance;
 			CallDeferred("addLevelScene", (Node2D)instance);
 		}
-		else{
+		else if (levelsbeaten == 10){
 			var scene = (PackedScene)GD.Load("res://Scenes/Levels/BossBattle.tscn");
 			var instance = (Node2D)scene.Instantiate();
+			this.currentlevel = (Node2D)instance;
 			CallDeferred("addLevelScene", (Node2D)instance);
+		}
+		else{
+			var scene = (PackedScene)GD.Load("res://Scenes/WinScreen.tscn");
+			var instance = (Control)scene.Instantiate();
+			CallDeferred("addWinScene", (Control)instance);
 		}
 	}
 	
 	void addLevelScene(Node2D level){
 		GetTree().Root.GetNode("Game").AddChild(level);
+	}
+	
+	void addWinScene(Control level){
+		GetTree().Rootw.AddChild(level);
 	}
 }
