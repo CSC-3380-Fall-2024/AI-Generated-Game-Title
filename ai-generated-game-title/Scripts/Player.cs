@@ -86,12 +86,11 @@ public partial class Player : CharacterBody2D
 	}
 	
 	public void Damage(int amount){
-		HurtSound.Play();
-		health -= amount;
-		if(health <= 0){
-			Die();
+		if(!dashing){
+			HurtSound.Play();
+			health -= amount;
+			SetHealth();
 		}
-		SetHealth();
 	}
 	
 	public void Die(){
@@ -110,5 +109,8 @@ public partial class Player : CharacterBody2D
 	{
 		GetInput();
 		MoveAndSlide();
+		if(health <= 0){
+			Die();
+		}
 	}
 }
