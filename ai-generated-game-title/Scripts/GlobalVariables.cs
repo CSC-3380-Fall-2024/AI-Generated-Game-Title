@@ -52,6 +52,6 @@ public partial class GlobalVariables : Node
 	}
 	
 	void addWinScene(Control level){
-		GetTree().Rootw.AddChild(level);
+		GetTree().Root.AddChild(level);
 	}
 }
