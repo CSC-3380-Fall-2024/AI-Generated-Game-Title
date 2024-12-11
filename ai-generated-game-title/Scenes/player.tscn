@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cnos7k3b76i1b"]
+[gd_scene load_steps=10 format=3 uid="uid://cnos7k3b76i1b"]
 
 [ext_resource type="Script" path="res://Scripts/Player.cs" id="1_i6nyg"]
+[ext_resource type="FontFile" uid="uid://mujaj5kup1xn" path="res://Textures/Silkscreen-Regular.ttf" id="3_7p2a5"]
 [ext_resource type="Script" path="res://Scripts/GunSwap.cs" id="3_e6naj"]
 [ext_resource type="SpriteFrames" uid="uid://nsskugdl7ipd" path="res://Sprites/CharacterAnimations/Player/PlayerSpriteFrames.tres" id="3_ovmeg"]
 [ext_resource type="AudioStream" uid="uid://bdra5h540wgg6" path="res://Sounds/dash.wav" id="4_1ffh5"]
@@ -48,6 +49,19 @@ step = 1.0
 value = 5.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
+
+[node name="EquippedGun" type="Label" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 61.0
+offset_top = -102.0
+offset_right = 250.0
+offset_bottom = -38.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_7p2a5")
+theme_override_font_sizes/font_size = 50
+text = "Pistol"
 
 [node name="MovementAnimations" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
