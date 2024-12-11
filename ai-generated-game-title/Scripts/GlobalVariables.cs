@@ -27,14 +27,14 @@ public partial class GlobalVariables : Node
 		GD.Print("trying to actually load level");
 		levelsbeaten++;
 		currentlevel.QueueFree();
-		if (levelsbeaten < 10){
+		if (levelsbeaten < 1){
 			int index = rnd.Next(6);
 		
 			var instance = (Node2D)levels[index].Instantiate();
 			this.currentlevel = (Node2D)instance;
 			CallDeferred("addLevelScene", (Node2D)instance);
 		}
-		else if (levelsbeaten == 10){
+		else if (levelsbeaten == 1){
 			var scene = (PackedScene)GD.Load("res://Scenes/Levels/BossBattle.tscn");
 			var instance = (Node2D)scene.Instantiate();
 			this.currentlevel = (Node2D)instance;
@@ -52,6 +52,6 @@ public partial class GlobalVariables : Node
 	}
 	
 	void addWinScene(Control level){
-		GetTree().Rootw.AddChild(level);
+		GetTree().Root.AddChild(level);
 	}
 }
