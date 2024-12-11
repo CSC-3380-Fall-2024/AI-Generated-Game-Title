@@ -98,12 +98,12 @@ position = Vector2(1280, -3)
 enemy_scn = Array[PackedScene]([ExtResource("6_dr8kf"), ExtResource("6_muw6c"), ExtResource("7_656kh"), ExtResource("8_g0un8")])
 
 [node name="Spawner3" parent="ActualGame" instance=ExtResource("4_dafna")]
-position = Vector2(-4, 724)
-enemy_scn = null
+position = Vector2(1267, 793)
+enemy_scn = Array[PackedScene]([ExtResource("6_dr8kf"), ExtResource("6_muw6c"), ExtResource("7_656kh"), ExtResource("8_g0un8")])
 
 [node name="Spawner4" parent="ActualGame" instance=ExtResource("4_dafna")]
-position = Vector2(1281, 722)
-enemy_scn = null
+position = Vector2(-53, 755)
+enemy_scn = Array[PackedScene]([ExtResource("6_dr8kf"), ExtResource("6_muw6c"), ExtResource("7_656kh"), ExtResource("8_g0un8")])
 
 [node name="LevelPortal" parent="ActualGame" instance=ExtResource("5_kmjok")]
 position = Vector2(441, 257)

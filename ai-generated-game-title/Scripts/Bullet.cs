@@ -15,10 +15,13 @@ public partial class Bullet : Area2D
 	public bool burning = false;
 	public bool freezing = false;
 	public int bounces = 0;
+	NumofEnemiesKilled numkilled;
+	KillstoNextLevel killsneeded;
 	
 	public override void _Ready()
 	{
- 
+ 		numkilled = (NumofEnemiesKilled)GetTree().Root.GetNode("Game").FindChild("NumofEnemiesKilled");
+		killsneeded = (KillstoNextLevel)GetTree().Root.GetNode("Game").FindChild("KillsToNextLevel");
 		Timer timer = new Timer();
 		AddChild(timer);
 		timer.WaitTime = Bullet_hang_time;
@@ -50,9 +53,9 @@ public partial class Bullet : Area2D
 			enemy.health -= Bullet_damage;
 			if (enemy.health <= 0)
 			{
-				NumofEnemiesKilled numkilled = (NumofEnemiesKilled)GetTree().Root.GetNode("Game").GetNode("NumofEnemiesKilled");
-				KillstoNextLevel killsneeded = (KillstoNextLevel)GetTree().Root.GetNode("Game").FindChild("KillsToNextLevel");
+				
 				numkilled.numofenemieskilled += 1;
+				killsneeded = (KillstoNextLevel)numkilled.currentlevel.GetNode("KillsToNextLevel");
 				enemy.QueueFree();
 				if (numkilled.numofenemieskilled >= killsneeded.killstoNextLevel){
 					numkilled.numofenemieskilled = 0;
@@ -76,4 +79,6 @@ public partial class Bullet : Area2D
 			penetration_count++; 
 		}
 	}
+	
+	
 }
