@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cnos7k3b76i1b" path="res://Scenes/player.tscn" id="3_7op2t"]
 [ext_resource type="PackedScene" uid="uid://bl8lxkquucv7k" path="res://Scenes/spawner.tscn" id="4_jyb5o"]
 [ext_resource type="Script" path="res://Scripts/KillstoNextLevel.cs" id="10_cv2e8"]
-[ext_resource type="Script" path="res://Scripts/NumofEnemiesKilled.cs" id="11_wx0fd"]
+[ext_resource type="Script" path="res://Scripts/GlobalVariables.cs" id="11_wx0fd"]
 [ext_resource type="PackedScene" uid="uid://baqei2b7h65ol" path="res://Scenes/Levels/StreetLevel.tscn" id="12_gohck"]
 [ext_resource type="PackedScene" uid="uid://bij1efl6piy31" path="res://Scenes/Levels/SewerLevel1.tscn" id="13_cyung"]
 [ext_resource type="PackedScene" uid="uid://2hgt3a28l7c0" path="res://Scenes/Levels/SewerLevel2.tscn" id="14_b10p5"]
@@ -84,8 +84,6 @@ position = Vector2(1314, 223)
 script = ExtResource("10_cv2e8")
 killstoNextLevel = 15
 
-[node name="NumofEnemiesKilled" type="Node" parent="."]
+[node name="GlobalVariables" type="Node" parent="."]
 script = ExtResource("11_wx0fd")
 levels = Array[PackedScene]([ExtResource("12_gohck"), ExtResource("13_cyung"), ExtResource("14_b10p5"), ExtResource("15_caegh"), ExtResource("16_xvo6n")])
-
-[node name="GlobalVar2" type="Node" parent="."]

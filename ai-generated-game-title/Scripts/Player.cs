@@ -18,9 +18,11 @@ public partial class Player : CharacterBody2D
 	AnimatedSprite2D moveanims;
 	AudioStreamPlayer2D DashSound;
 	AudioStreamPlayer2D HurtSound;
+	GlobalVariables globalvars;
 	
 	public override void _Ready()
 	{
+		globalvars = (GlobalVariables)GetTree().Root.GetNode("Game").GetNode("GlobalVariables");
 		InitHealth();
 		DashTimer = GetNode<Timer>("DashTimer") as Timer;
 		DashCooldown = GetNode<Timer>("DashCooldown") as Timer;
@@ -71,9 +73,9 @@ public partial class Player : CharacterBody2D
 	}
 	
 	public void InitHealth(){
-		health = MAX_HEALTH;
+		health = globalvars.currenthealth;
 		HealthBar = GetNode<ProgressBar>("CanvasLayer/HealthBar") as ProgressBar;
-		HealthBar.MaxValue = health;
+		HealthBar.MaxValue = 20;
 		SetHealth();
 	}
 	
@@ -85,6 +87,7 @@ public partial class Player : CharacterBody2D
 		if(!dashing){
 			HurtSound.Play();
 			health -= amount;
+			globalvars.currenthealth -= amount;
 			SetHealth();
 		}
 	}

@@ -1,12 +1,14 @@
 using Godot;
 using System;
 
-public partial class NumofEnemiesKilled : Node
+public partial class GlobalVariables : Node
 {
 	[Export] public int numofenemieskilled = 0;
 	[Export] PackedScene[] levels;
 	Random rnd;
 	public Node2D currentlevel;
+	public int currenthealth = 20;
+	public int levelsbeaten = 0;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
