@@ -1,21 +1,21 @@
 [gd_scene load_steps=18 format=3 uid="uid://b6b2yunihqir8"]
 
-[ext_resource type="Texture2D" uid="uid://bjjj2gq3rtpoe" path="res://Textures/Grass 1.png" id="1_cj1qr"]
-[ext_resource type="Texture2D" uid="uid://d4f6ckg8r52yv" path="res://Textures/icon.svg" id="2_uyt1j"]
-[ext_resource type="PackedScene" uid="uid://cnos7k3b76i1b" path="res://Scenes/player.tscn" id="3_0b5wt"]
-[ext_resource type="PackedScene" uid="uid://bl8lxkquucv7k" path="res://Scenes/spawner.tscn" id="4_dafna"]
-[ext_resource type="Script" path="res://Scripts/NumofEnemiesKilled.cs" id="6_dffyp"]
-[ext_resource type="PackedScene" uid="uid://d1go4syut2pyn" path="res://Scenes/Enemies/TestEnemyAnimated.tscn" id="6_dr8kf"]
-[ext_resource type="PackedScene" uid="uid://cidc7ubf1xgyd" path="res://Scenes/Enemies/Refridgerator.tscn" id="6_muw6c"]
-[ext_resource type="PackedScene" uid="uid://dvwkyvf1ur21k" path="res://Scenes/Enemies/AnimeWaifuBoss.tscn" id="7_656kh"]
-[ext_resource type="PackedScene" uid="uid://d7spmr4re708" path="res://Scenes/Enemies/EvilFrenchDude.tscn" id="8_g0un8"]
-[ext_resource type="PackedScene" uid="uid://7p0f06uy0yaq" path="res://Scenes/Enemies/WolfwithaGun.tscn" id="9_147vq"]
-[ext_resource type="Script" path="res://Scripts/KillstoNextLevel.cs" id="10_po54w"]
-[ext_resource type="PackedScene" uid="uid://baqei2b7h65ol" path="res://Scenes/Levels/StreetLevel.tscn" id="11_hh6ib"]
-[ext_resource type="PackedScene" uid="uid://bij1efl6piy31" path="res://Scenes/Levels/SewerLevel1.tscn" id="12_kr4x2"]
-[ext_resource type="PackedScene" uid="uid://2hgt3a28l7c0" path="res://Scenes/Levels/SewerLevel2.tscn" id="13_cq1mh"]
-[ext_resource type="PackedScene" uid="uid://dwmwuv5738aeh" path="res://Scenes/Levels/DesertLevel1.tscn" id="14_iuggs"]
-[ext_resource type="PackedScene" uid="uid://ueal1qmv42q2" path="res://Scenes/Levels/DesertLevel2.tscn" id="15_01f7f"]
+[ext_resource type="Texture2D" uid="uid://bjjj2gq3rtpoe" path="res://Textures/Grass 1.png" id="1_qcssn"]
+[ext_resource type="Texture2D" uid="uid://d4f6ckg8r52yv" path="res://Textures/icon.svg" id="2_lhwyp"]
+[ext_resource type="PackedScene" uid="uid://cnos7k3b76i1b" path="res://Scenes/player.tscn" id="3_7op2t"]
+[ext_resource type="PackedScene" uid="uid://bl8lxkquucv7k" path="res://Scenes/spawner.tscn" id="4_jyb5o"]
+[ext_resource type="PackedScene" uid="uid://d1go4syut2pyn" path="res://Scenes/Enemies/TestEnemyAnimated.tscn" id="5_ejb2h"]
+[ext_resource type="PackedScene" uid="uid://cidc7ubf1xgyd" path="res://Scenes/Enemies/Refridgerator.tscn" id="6_8emnp"]
+[ext_resource type="PackedScene" uid="uid://dvwkyvf1ur21k" path="res://Scenes/Enemies/AnimeWaifuBoss.tscn" id="7_48ow2"]
+[ext_resource type="PackedScene" uid="uid://d7spmr4re708" path="res://Scenes/Enemies/EvilFrenchDude.tscn" id="8_6eyf5"]
+[ext_resource type="PackedScene" uid="uid://7p0f06uy0yaq" path="res://Scenes/Enemies/WolfwithaGun.tscn" id="9_vmnjd"]
+[ext_resource type="Script" path="res://Scripts/KillstoNextLevel.cs" id="10_cv2e8"]
+[ext_resource type="Script" path="res://Scripts/NumofEnemiesKilled.cs" id="11_wx0fd"]
+[ext_resource type="PackedScene" uid="uid://baqei2b7h65ol" path="res://Scenes/Levels/StreetLevel.tscn" id="12_gohck"]
+[ext_resource type="PackedScene" uid="uid://bij1efl6piy31" path="res://Scenes/Levels/SewerLevel1.tscn" id="13_cyung"]
+[ext_resource type="PackedScene" uid="uid://2hgt3a28l7c0" path="res://Scenes/Levels/SewerLevel2.tscn" id="14_b10p5"]
+[ext_resource type="PackedScene" uid="uid://dwmwuv5738aeh" path="res://Scenes/Levels/DesertLevel1.tscn" id="15_caegh"]
+[ext_resource type="PackedScene" uid="uid://ueal1qmv42q2" path="res://Scenes/Levels/DesertLevel2.tscn" id="16_xvo6n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_060ry"]
 size = Vector2(69, 477)
@@ -29,7 +29,7 @@ offset_left = -3056.0
 offset_top = -2147.0
 offset_right = 5059.0
 offset_bottom = 3039.0
-texture = ExtResource("1_cj1qr")
+texture = ExtResource("1_qcssn")
 stretch_mode = 1
 
 [node name="randowall" type="StaticBody2D" parent="ActualGame"]
@@ -39,7 +39,7 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="Sprite2D" parent="ActualGame/randowall"]
 position = Vector2(24, 5.5)
 scale = Vector2(0.546875, 3.72656)
-texture = ExtResource("2_uyt1j")
+texture = ExtResource("2_lhwyp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActualGame/randowall"]
 position = Vector2(24.5, 6.5)
@@ -54,7 +54,7 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="Sprite2D" parent="ActualGame/randowall2"]
 position = Vector2(24, 5.5)
 scale = Vector2(0.546875, 3.72656)
-texture = ExtResource("2_uyt1j")
+texture = ExtResource("2_lhwyp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActualGame/randowall2"]
 position = Vector2(24.5, 6.5)
@@ -67,7 +67,7 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="Sprite2D" parent="ActualGame/randowall3"]
 position = Vector2(24, 5.5)
 scale = Vector2(0.546875, 3.72656)
-texture = ExtResource("2_uyt1j")
+texture = ExtResource("2_lhwyp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActualGame/randowall3"]
 position = Vector2(24.5, 6.5)
@@ -82,33 +82,33 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="Sprite2D" parent="ActualGame/randowall4"]
 position = Vector2(24, 5.5)
 scale = Vector2(0.546875, 3.72656)
-texture = ExtResource("2_uyt1j")
+texture = ExtResource("2_lhwyp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ActualGame/randowall4"]
 position = Vector2(24.5, 6.5)
 shape = SubResource("RectangleShape2D_060ry")
 
-[node name="Player" parent="ActualGame" instance=ExtResource("3_0b5wt")]
+[node name="Player" parent="ActualGame" instance=ExtResource("3_7op2t")]
 position = Vector2(641, 360)
 
-[node name="Spawner" parent="ActualGame" instance=ExtResource("4_dafna")]
+[node name="Spawner" parent="ActualGame" instance=ExtResource("4_jyb5o")]
 
-[node name="Spawner2" parent="ActualGame" instance=ExtResource("4_dafna")]
+[node name="Spawner2" parent="ActualGame" instance=ExtResource("4_jyb5o")]
 position = Vector2(1280, -3)
-enemy_scn = Array[PackedScene]([ExtResource("6_dr8kf"), ExtResource("6_muw6c"), ExtResource("7_656kh"), ExtResource("8_g0un8"), ExtResource("9_147vq")])
+enemy_scn = Array[PackedScene]([ExtResource("5_ejb2h"), ExtResource("6_8emnp"), ExtResource("7_48ow2"), ExtResource("8_6eyf5"), ExtResource("9_vmnjd")])
 
-[node name="Spawner3" parent="ActualGame" instance=ExtResource("4_dafna")]
+[node name="Spawner3" parent="ActualGame" instance=ExtResource("4_jyb5o")]
 position = Vector2(1267, 793)
-enemy_scn = Array[PackedScene]([ExtResource("6_dr8kf"), ExtResource("6_muw6c"), ExtResource("7_656kh"), ExtResource("8_g0un8"), ExtResource("9_147vq")])
+enemy_scn = Array[PackedScene]([ExtResource("5_ejb2h"), ExtResource("6_8emnp"), ExtResource("7_48ow2"), ExtResource("8_6eyf5"), ExtResource("9_vmnjd")])
 
-[node name="Spawner4" parent="ActualGame" instance=ExtResource("4_dafna")]
+[node name="Spawner4" parent="ActualGame" instance=ExtResource("4_jyb5o")]
 position = Vector2(-53, 755)
-enemy_scn = Array[PackedScene]([ExtResource("6_dr8kf"), ExtResource("6_muw6c"), ExtResource("7_656kh"), ExtResource("8_g0un8"), ExtResource("9_147vq")])
+enemy_scn = Array[PackedScene]([ExtResource("5_ejb2h"), ExtResource("6_8emnp"), ExtResource("7_48ow2"), ExtResource("8_6eyf5"), ExtResource("9_vmnjd")])
 
-[node name="CharacterBody2D" parent="ActualGame" instance=ExtResource("6_dr8kf")]
+[node name="CharacterBody2D" parent="ActualGame" instance=ExtResource("5_ejb2h")]
 
 [node name="KillsToNextLevel" type="Node" parent="ActualGame"]
-script = ExtResource("10_po54w")
+script = ExtResource("10_cv2e8")
 killstoNextLevel = 7
 
 [node name="TextEdit" type="TextEdit" parent="ActualGame"]
@@ -120,7 +120,7 @@ text = "Welcome to the game! WASD to move, click to shoot in that direction, R t
 wrap_mode = 1
 
 [node name="NumofEnemiesKilled" type="Node" parent="."]
-script = ExtResource("6_dffyp")
-levels = Array[PackedScene]([ExtResource("11_hh6ib"), ExtResource("12_kr4x2"), ExtResource("13_cq1mh"), ExtResource("14_iuggs"), ExtResource("15_01f7f")])
+script = ExtResource("11_wx0fd")
+levels = Array[PackedScene]([ExtResource("12_gohck"), ExtResource("13_cyung"), ExtResource("14_b10p5"), ExtResource("15_caegh"), ExtResource("16_xvo6n")])
 
 [node name="GlobalVar2" type="Node" parent="."]
