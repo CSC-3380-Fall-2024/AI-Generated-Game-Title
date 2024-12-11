@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d4f6ckg8r52yv" path="res://Textures/icon.svg" id="2_uyt1j"]
 [ext_resource type="PackedScene" uid="uid://cnos7k3b76i1b" path="res://Scenes/player.tscn" id="3_0b5wt"]
 [ext_resource type="PackedScene" uid="uid://bl8lxkquucv7k" path="res://Scenes/spawner.tscn" id="4_dafna"]
-[ext_resource type="Script" path="res://Scripts/NumofEnemiesKilled.cs" id="6_dffyp"]
+[ext_resource type="Script" path="res://Scripts/GlobalVariables.cs" id="6_dffyp"]
 [ext_resource type="PackedScene" uid="uid://d1go4syut2pyn" path="res://Scenes/Enemies/TestEnemyAnimated.tscn" id="6_dr8kf"]
 [ext_resource type="PackedScene" uid="uid://cidc7ubf1xgyd" path="res://Scenes/Enemies/Refridgerator.tscn" id="6_muw6c"]
 [ext_resource type="PackedScene" uid="uid://dvwkyvf1ur21k" path="res://Scenes/Enemies/AnimeWaifuBoss.tscn" id="7_656kh"]
@@ -119,8 +119,6 @@ offset_bottom = 295.0
 text = "Welcome to the game! WASD to move, click to shoot in that direction, R to switch guns. Keep killing enemies and last as long as you can! Kill 7 enemies to complete the tutorial and proceed to the next level."
 wrap_mode = 1
 
-[node name="NumofEnemiesKilled" type="Node" parent="."]
+[node name="GlobalVariables" type="Node" parent="."]
 script = ExtResource("6_dffyp")
 levels = Array[PackedScene]([ExtResource("11_hh6ib"), ExtResource("12_kr4x2"), ExtResource("13_cq1mh"), ExtResource("14_iuggs"), ExtResource("15_01f7f")])
-
-[node name="GlobalVar2" type="Node" parent="."]

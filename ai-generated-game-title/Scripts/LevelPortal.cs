@@ -19,7 +19,7 @@ public partial class LevelPortal : Node2D
 		GD.Print("door touched");
 		RigidBody2D bod = (RigidBody2D)this.GetNode("PortalBody");
 		bod.SetSleeping(true);
-		NumofEnemiesKilled numkilled = (NumofEnemiesKilled)GetTree().Root.GetNode("Game").GetNode("NumofEnemiesKilled");
+		GlobalVariables numkilled = (GlobalVariables)GetTree().Root.GetNode("Game").GetNode("NumofEnemiesKilled");
 		if(numkilled.numofenemieskilled >= 5){
 			GD.Print("trying to actually load level");
 			GetTree().Root.GetNode("Game").GetNode("ActualGame").QueueFree();
