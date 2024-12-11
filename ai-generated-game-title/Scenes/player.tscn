@@ -81,7 +81,7 @@ stream = ExtResource("5_xt4jc")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer2"]
 texture_filter = 1
-position = Vector2(1183, 561)
+position = Vector2(1144, 531.604)
 texture = ExtResource("5_acftf")
 
 [node name="Area2D" type="Area2D" parent="."]

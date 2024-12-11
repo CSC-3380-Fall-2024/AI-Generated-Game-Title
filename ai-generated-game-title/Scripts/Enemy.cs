@@ -31,18 +31,15 @@ public partial class Enemy : CharacterBody2D
 				
 				if (distanceToPlayer <= AttackRange)
 				{
-					// Attack player if within attack range
 					HandleAttack(delta);
 				}
 				else
 				{
-					// Chase the player if within chase range
 					HandleChase(delta);
 				}
 			}
 			else
 			{
-				// Stop moving if the player is out of range
 				Velocity = Vector2.Zero;
 			}
 		}
