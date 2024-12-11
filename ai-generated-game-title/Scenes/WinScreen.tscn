@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=3 uid="uid://dykyb6g3rp6ty"]
+
+[ext_resource type="Script" path="res://Scripts/WinScreen.cs" id="1_jg6oj"]
+[ext_resource type="FontFile" uid="uid://cj4c6jgfayo06" path="res://Textures/Silkscreen-Bold.ttf" id="2_2m4di"]
+[ext_resource type="FontFile" uid="uid://mujaj5kup1xn" path="res://Textures/Silkscreen-Regular.ttf" id="3_bdhdn"]
+[ext_resource type="AudioStream" uid="uid://1633tr075n8l" path="res://Sounds/WinSound.wav" id="4_dxj82"]
+
+[node name="WinScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jg6oj")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 153.0
+offset_right = 250.0
+offset_bottom = 263.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_2m4di")
+theme_override_font_sizes/font_size = 80
+text = "YOU WIN!!!!!"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -537.5
+offset_top = 281.0
+offset_right = 537.5
+offset_bottom = 388.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_bdhdn")
+theme_override_font_sizes/font_size = 40
+text = "you have defeated the evil
+ai and saved the world"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = 55.5
+offset_right = 202.0
+offset_bottom = 198.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="MenuButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_2m4di")
+text = "Main Menu"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_2m4di")
+text = "Quit"
+
+[node name="WinSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(637, 389)
+stream = ExtResource("4_dxj82")
+
+[connection signal="button_up" from="VBoxContainer/MenuButton" to="." method="_on_menu_button_button_up"]
+[connection signal="button_up" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_button_up"]
