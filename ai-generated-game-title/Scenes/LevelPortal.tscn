@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwcxmufdsxm1l"]
+[gd_scene load_steps=4 format=3 uid="uid://t5m307810bcg"]
 
 [ext_resource type="Script" path="res://Scripts/LevelPortal.cs" id="1_n8f1b"]
 [ext_resource type="Texture2D" uid="uid://d4f6ckg8r52yv" path="res://Textures/icon.svg" id="2_mmyd8"]
