@@ -66,3 +66,4 @@ position = Vector2(1314, 223)
 
 [node name="KillsToNextLevel" type="Node" parent="."]
 script = ExtResource("4_jeqvh")
+killstoNextLevel = 15

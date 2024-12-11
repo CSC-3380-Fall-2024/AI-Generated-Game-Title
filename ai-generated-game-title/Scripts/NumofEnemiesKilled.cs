@@ -6,12 +6,14 @@ public partial class NumofEnemiesKilled : Node
 	[Export] public int numofenemieskilled = 0;
 	[Export] PackedScene[] levels;
 	Random rnd;
+	public Node2D currentlevel;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		numofenemieskilled = 0;
 		rnd = new Random();
+		currentlevel = (Node2D)GetTree().Root.GetNode("Game").GetNode("ActualGame");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,11 +23,12 @@ public partial class NumofEnemiesKilled : Node
 	
 	public void LoadLevel(){
 		GD.Print("trying to actually load level");
-		GetTree().Root.GetNode("Game").GetNode("ActualGame").QueueFree();
+		currentlevel.QueueFree();
 		int index = rnd.Next(5);
 		
 		var instance = (Node2D)levels[index].Instantiate();
-		GetTree().Root.GetNode("Game").AddChild((Node2D)instance);
+		this.currentlevel = (Node2D)instance;
+		CallDeferred("addLevelScene", (Node2D)instance);
 	}
 	
 	void addLevelScene(Node2D level){
