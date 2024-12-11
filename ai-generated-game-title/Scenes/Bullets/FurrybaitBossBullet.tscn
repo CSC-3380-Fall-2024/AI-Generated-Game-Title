@@ -36,6 +36,8 @@ animations = [{
 size = Vector2(65, 34)
 
 [node name="FurrybaitBossBullet" type="Area2D"]
+collision_layer = 8
+collision_mask = 7
 script = ExtResource("1_8asj8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
