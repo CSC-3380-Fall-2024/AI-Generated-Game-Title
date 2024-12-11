@@ -59,10 +59,6 @@ public partial class Player : CharacterBody2D
 			DashSound.Play();
 		}
 		
-		if(Input.IsActionJustPressed("damageplayerjustbecause")){
-			Damage(5);
-		}
-		
 		if(Input.IsActionJustPressed("ui_cancel")){
 			GetTree().Quit();
 		}

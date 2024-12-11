@@ -3,9 +3,12 @@ using System;
 
 public partial class DeathScreen : Control
 {
-	// Called when the node enters the scene tree for the first time.
+	AudioStreamPlayer2D DeathSound;
+	
 	public override void _Ready()
 	{
+		DeathSound = GetNode<AudioStreamPlayer2D>("DeathSound") as AudioStreamPlayer2D;
+		DeathSound.Play();
 	}
 
 	public void _on_menu_button_button_up(){
